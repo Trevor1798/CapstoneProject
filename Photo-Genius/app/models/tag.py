@@ -8,7 +8,7 @@ class Tag(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    image_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('images.id'), nullable=False))
+    image_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('images.id')))
     tag_name = db.Column(db.String(75), nullable=False)
 
     image = db.relationship('Image', back_populates="tags")

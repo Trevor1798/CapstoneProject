@@ -4,6 +4,7 @@ from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_wtf.csrf import CSRFProtect, generate_csrf
 from flask_login import LoginManager
+
 from .models import db, User, Comment, Favorite, Image, Tag
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
@@ -11,6 +12,7 @@ from .api.comment_routes import comment_routes
 from .api.favorite_routes import favorite_routes
 from .api.image_routes import image_routes
 from .api.tag_routes import tag_routes
+
 from .seeds import seed_commands
 from .config import Config
 
