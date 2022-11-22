@@ -11,6 +11,7 @@ class Tag(db.Model):
     image_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('images.id'), nullable=False))
     tag_name = db.Column(db.String(75), nullable=False)
 
+    image = db.relationship('Image', back_populates="tags")
 
     def to_dict(self):
         return {

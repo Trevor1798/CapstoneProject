@@ -10,6 +10,8 @@ class Favorite(db.Model):
     user_id = db.Column(db.Integer, primary_key=True)
     image_id = db.Column(db.Integer, primary_key=True)
 
+    # Relationships
+    image = db.relationship('Image', back_populates='favorites')
 
     def to_dict(self):
         return {
