@@ -13,9 +13,9 @@ class Image(db.Model):
     image_url = db.Column(db.String, nullable=False)
 
     # Relationships
-    comments = db.relationship('Comment', back_populates='images', cascade='all, delete')
-    favorites = db.relationship('Favorite', back_populates='images', cascade='all, delete')
-    tags = db.relationship('Tag', back_populates='images', cascade='all, delete')
+    comments = db.relationship('Comment', back_populates='image', cascade='all, delete')
+    favorites = db.relationship('Favorite', back_populates='image', cascade='all, delete')
+    tags = db.relationship('Tag', back_populates='image', cascade='all, delete')
 
     def to_dict(self):
         return {
