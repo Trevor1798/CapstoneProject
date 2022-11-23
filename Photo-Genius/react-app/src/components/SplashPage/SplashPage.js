@@ -26,7 +26,7 @@ const SplashPage = () => {
             </div>
 
         <div className='splashpage'>
-            <img className="splashpage-image" src="https://www.pixel4k.com/wp-content/uploads/2018/09/night-city-city-lights-metropolis-night-4k_1538067561.jpg"></img>
+            <img className="splashpage-image" src="https://www.pixel4k.com/wp-content/uploads/2021/08/aerial-view-skyline-of-singapore-4k_1629228074-2048x1365.jpg"></img>
             <div className='splash-welcome'>Find your inspiration</div>
             <div className='splash-text'>Join the Photo-Genius community, home to tens of billions of photos and 2 million groups</div>
             <div className='start-for-free' onClick={() => history.push('/signup')}>Start for free</div>
