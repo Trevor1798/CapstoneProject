@@ -16,7 +16,7 @@ def get_all_images():
 
 # Create an Image
 @image_routes.route('/new_image', methods=["POST"])
-@login_required
+# @login_required
 def create_image():
     form = ImageForm()
     form['csrf_token'].data = request.cookies['csrf_token']
