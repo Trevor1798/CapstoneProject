@@ -19,7 +19,7 @@ const ImageCard = ({image}) => {
     // console.log('these are my images', image.image_url)
     return (
         <div className="image-card-wrapper">
-            {/* <Link to={`/images/${image?.id}`}/> */}
+            <Link to={`/images/${images?.id}`}/>
             <img className="image-card" src={image?.image_url} alt='testing images' onError={(e) => e.currentTarget.src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png"}></img>
             <div className='images'>
                 <div className="image-title">{image?.title}</div>
