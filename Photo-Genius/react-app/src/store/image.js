@@ -85,7 +85,7 @@ const imagesReducer = (state = initialState, action) => {
         case GET_IMAGE:
             newState = {}
             action.payload.forEach((image) => {
-                newState[image.id] = action.payload
+                newState[image.id] = image
             })
         return newState
         case CREATE_IMAGE:
