@@ -3,6 +3,7 @@ import { getImage } from '../../store/image'
 import { useHistory } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
+import ImageCard from '../Image/ImageCard'
 const ExplorePage = () => {
     let dispatch = useDispatch()
     let history = useHistory()
@@ -22,9 +23,13 @@ const ExplorePage = () => {
             </div>
         <div className='explore-page'>
             <div className='explore-images'>
-                {images?.map((img) => {
-                    <div key={img?.id}>
+                {images.map((image) => {
+                    return (
+
+                        <div key={image?.id}>
+                        <ImageCard image={image}/>
                         </div>
+                )
                 })}
             </div>
         </div>
