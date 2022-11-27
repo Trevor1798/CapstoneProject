@@ -11,6 +11,8 @@ import { authenticate } from './store/session';
 import SplashPage from './components/SplashPage/SplashPage';
 import ExplorePage from './components/Explore/ExplorePage';
 import CreateImage from './components/Image/CreateImage';
+import EditImage from './components/Image/EditImage';
+import ImageDetails from './components/Image/ImageDetails';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -51,6 +53,12 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/images/upload' exact={true}>
           <CreateImage/>
+        </ProtectedRoute>
+        <Route path='/images/:imageId' exact={true}>
+          <ImageDetails/>
+        </Route>
+        <ProtectedRoute path='/images/:imageId/edit' exact={true}>
+          <EditImage/>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

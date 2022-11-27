@@ -44,6 +44,7 @@ def edit_image(id):
         image.title = form.data["title"]
         image.description = form.data['description']
         image.image_url = form.data['image_url']
+        image.user_id = form.data['user_id']
 
         db.session.commit()
         return image.to_dict()
