@@ -35,7 +35,7 @@ export const getComment = () => async dispatch => {
     const response = await fetch('/api/comments/')
     if (response.ok){
         const comment = await response.json()
-        dispatch(getCommentAction(comment))
+        dispatch(getCommentAction(comment.comments))
 
     }
 }
@@ -48,7 +48,7 @@ export const createComment = (payload) => async dispatch => {
     })
     if (response.ok){
         const newComment = await response.json()
-        dispatch(createComment(newComment))
+        dispatch(createCommentAction(newComment))
 
     }
 }

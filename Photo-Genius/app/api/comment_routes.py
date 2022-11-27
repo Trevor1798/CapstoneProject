@@ -22,6 +22,8 @@ def create_comment():
     if form.validate_on_submit():
         params = {
             "description": form.data['description'],
+            "user_id": form.data['user_id'],
+            "image_id": form.data['image_id']
 
         }
         db.session.add()
@@ -38,6 +40,8 @@ def update_comment(id):
     if form.validate_on_submit():
         comment = Comment.query.get(id).first()
         comment.description = form.data['description']
+        comment.user_id = form.data['user_id']
+        comment.image_id = form.data['image_id']
         db.session.commit()
         return comment.to_dict()
 
@@ -49,7 +53,3 @@ def delete_comment(id):
     db.session.delete(comment)
     db.session.commit()
     return {"message": "Comment Deleted"}
-
-
-
-    
