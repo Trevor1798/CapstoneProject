@@ -21,12 +21,13 @@ const SplashPage = () => {
 
                 <div className='logins'>
                 <div className='splash-login' onClick={() => history.push('/login')}>Log In</div>
-                <div className='splash-login-new' onClick={() => history.push('/signup')}>Sign Up</div>
+                <div className='splash-login-new' onClick={() => history.push('/sign-up')}>Sign Up</div>
                 </div>
             </div>
 
         <div className='splashpage'>
             <img className="splashpage-image" src="https://www.pixel4k.com/wp-content/uploads/2021/08/aerial-view-skyline-of-singapore-4k_1629228074-2048x1365.jpg"></img>
+
             <div className='text-wrapper'>
             <div className='splash-welcome'>Find your inspiration.</div>
             <div className='splash-text'>Join the Photo-Genius community, home to tens of billions of photos and 2 million groups</div>

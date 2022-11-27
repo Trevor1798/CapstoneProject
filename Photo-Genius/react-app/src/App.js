@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
-import NavBar from './components/NavBar';
+import NavBar from './components/Nav/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
@@ -31,33 +31,40 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
       <Switch>
-        <Route path='/login' exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path='/sign-up' exact={true}>
-          <SignUpForm />
-        </Route>
-        <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
-        </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true} >
-          <User />
-        </ProtectedRoute>
         <Route path='/' exact={true} >
           <SplashPage/>
         </Route>
+        <Route path='/login' exact={true}>
+          <NavBar />
+          <LoginForm />
+        </Route>
+        <Route path='/sign-up' exact={true}>
+          <NavBar />
+          <SignUpForm />
+        </Route>
+        <ProtectedRoute path='/users' exact={true} >
+          <NavBar />
+          <UsersList/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/users/:userId' exact={true} >
+          <NavBar />
+          <User />
+        </ProtectedRoute>
         <ProtectedRoute path='/explore' exact={true}>
+          <NavBar />
           <ExplorePage/>
         </ProtectedRoute>
         <ProtectedRoute path='/images/upload' exact={true}>
+          <NavBar />
           <CreateImage/>
         </ProtectedRoute>
         <Route path='/images/:imageId' exact={true}>
+          <NavBar />
           <ImageDetails/>
         </Route>
         <ProtectedRoute path='/images/:imageId/edit' exact={true}>
+          <NavBar />
           <EditImage/>
         </ProtectedRoute>
       </Switch>
