@@ -8,6 +8,7 @@ import { getComment } from "../../store/comment"
 import './ImageCSS/ImageDetails.css'
 import CommentCard from "../Comments/CommentCard"
 import CreateComment from "../Comments/CreateComment"
+import { getUser } from "../../store/user"
 
 
 const ImageDetails = () => {
@@ -17,20 +18,23 @@ const ImageDetails = () => {
     const user = useSelector(state => state.session.user)
     const images = useSelector(state => state.images)
     const commentsObj = useSelector(state => state.comments)
+    const users = useSelector(state => state.users)
 
+
+    const imagesArr = Object.values(images)
     const comment = Object.values(commentsObj)
     const filterComment = comment?.filter(comment => comment?.image_id === parseInt(imageId))
 
     // console.log('filteredcomments', filterComment[0]?.description)
     const image_ids = images[imageId]
-    const imageOwner = image_ids?.user_id
+    const imageOwner = users[image_ids?.user_id]
 
-
-    console.log('these are my images', images)
-    console.log('imageowner', filterComment)
-    console.log('users', user?.first_name)
-    console.log('images ids', image_ids)
-    console.log('23048242842984902', comment)
+    console.log('these are my users', users)
+    console.log('these are my images',imageOwner)
+    // console.log('imageowner', filterComment)
+    // console.log('users', user?.first_name)
+    // console.log('images ids', image_ids)
+    // console.log('23048242842984902', comment)
 
     const handleDelete = (e) => {
         e.preventDefault()
@@ -43,6 +47,7 @@ const ImageDetails = () => {
     useEffect(() =>{
         dispatch(getImage())
         dispatch(getComment())
+        dispatch(getUser())
     }, [dispatch])
 
     return (
@@ -51,7 +56,7 @@ const ImageDetails = () => {
                 <img className='image' src={image_ids?.image_url} onError={e => e.currentTarget.src = ''}></img>
             </div>
             <div className="image-profile-details">
-                {user?.id === imageOwner && (
+                {imageOwner?.id === image_ids?.user_id && (
                     <div className="update-delete-wrapper">
                         <div className="update-image">
                         <i className="pen fa-regular fa-pen-to-square" onClick={() => history.push(`/images/${image_ids?.id}/edit`)}></i>
@@ -67,9 +72,7 @@ const ImageDetails = () => {
             <div className="user-description">
             <i className="user fa-solid fa-user-tie"></i>
             <div className="user-name">
-                {user?.id === imageOwner && (
-                    <div>{user?.first_name}</div>
-                )}
+                <div>{imageOwner?.first_name}</div>
             </div>
             <div className="image-title">{image_ids?.title}</div>
             <div className="image-description">{image_ids?.description}</div>
@@ -82,7 +85,7 @@ const ImageDetails = () => {
                         <CommentCard comment={comment}/>
                         {/* <div className="comments">{comment?.description}</div> */}
                         </div>
-                        ))}
+                    ))}
 
                 </div>
             <div className="create-comment-detail">

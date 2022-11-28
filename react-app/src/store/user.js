@@ -1,20 +1,21 @@
 const GET_USERS = 'session/GET_USERS'
 
-const getUserAction = (users) => {
-    return {
+const getUserAction = (users) => ({
+    
         type: GET_USERS,
-        users
-    }
-}
+        payload: users
+    })
+
+
 
 
 export const getUser = () => async dispatch => {
     const response = await fetch('/api/users/')
     if (response.ok){
-        const user = await response.json()
-        console.log('this is user inside thunk', user)
-        dispatch(getUserAction(user))
-        return user
+        const users = await response.json()
+        console.log('this is user inside thunk', users)
+        dispatch(getUserAction(users))
+        return users
     }
 }
 

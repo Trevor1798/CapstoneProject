@@ -1,12 +1,14 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router"
 import {Link} from 'react-router-dom'
+import './ImageCSS/ImageCard.css'
 
-const ImageCard = ({image, comment}) => {
+const ImageCard = ({image, comment, imageId}) => {
     let dispatch = useDispatch()
     let history = useHistory()
     let user = useSelector(state => state.session.user)
     let images = useSelector(state => state.images)
+    console.log('trying to get iMMAGE ID', images)
     console.log('users', user)
     console.log("-----------", comment?.length)
 
@@ -20,8 +22,8 @@ const ImageCard = ({image, comment}) => {
     // console.log({"first": user.first_name, "second":user.last_name})
     // console.log('these are my images', image.image_url)
     return (
-        <div className="image-card-wrapper">
-            <Link to={`/images/${images?.id}`}/>
+        <div className="image-card-wrapper" onClick={() => history.push(`/images/${image.id}`)}>
+            <Link to={`/images/${imageId}`}/>
             <img className="image-card" src={image?.image_url} alt='testing images' onError={(e) => e.currentTarget.src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png"}></img>
             <div className='images'>
                 <div className="image-title">{image?.title}</div>
