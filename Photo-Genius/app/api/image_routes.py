@@ -25,6 +25,7 @@ def create_image():
             "title": form.data["title"],
             "description": form.data["description"],
             "image_url": form.data["image_url"],
+            "user_id": form.data["user_id"]
             # "user_id": current_user.id
         }
         new_image = Image(**params)
