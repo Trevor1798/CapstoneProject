@@ -1,3 +1,94 @@
-.image-details.wrapper{
+.image-details-wrapper{
+display: flex;
+justify-content: center;
+background: rgb(19, 18, 18);
+height: 80vh
+}
+
+.image-detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+}
+.image{
+max-width: 80%;
+max-height: 80%;
+object-fit: cover;
+}
+
+.image-profile-details{
+
+
+}
+.update-delete-wrapper{
+
+
+}
+.update-image{
+
+
+}
+.pen{
+
+
+}
+
+.trash{
+
+}
+
+.below-image-wrapper{
+
+
+}
+
+.user-description{
+
+
+}
+
+.user{
+
+
+}
+
+.user-name {
+
+
+}
+
+.image-title {
+
+
+}
+
+.image-description {
+
+
+}
+
+.views-faves-comments-wrapper {
+
+
+}
+
+.comments-wrapper {
+
+
+
+}
+
+
+.comments {
+
+
+
+}
+
+.comment-description {
+
     
 }

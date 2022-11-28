@@ -2,12 +2,14 @@ import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router"
 import {Link} from 'react-router-dom'
 
-const ImageCard = ({image}) => {
+const ImageCard = ({image, comment}) => {
     let dispatch = useDispatch()
     let history = useHistory()
     let user = useSelector(state => state.session.user)
     let images = useSelector(state => state.images)
     console.log('users', user)
+    console.log("-----------", comment?.length)
+
     // let imageArr = Object.values(image)
     // let imageOwner = user[image?.userId]
     // if (image.user_id === user.id){
@@ -27,8 +29,12 @@ const ImageCard = ({image}) => {
                         <div className="firstandlast">
                             {`by ${user?.first_name} ${user?.last_name}`}
                         </div>
-                    </div>
+                </div>
             </div>
+            <div className="comment-icon">
+            <i className="fa-regular fa-comment-dots"></i>
+            </div>
+            <div className='images-comment-count'>{comment?.length}</div>
         </div>
     )
 }
