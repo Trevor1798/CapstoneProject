@@ -11,7 +11,9 @@ max-height: 270px;
 
 }
 .images {
-
+width:100%;
+min-width: 200px;
+max-height: 270px;
 
 
 }
