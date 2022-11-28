@@ -19,6 +19,10 @@ def seed_images():
     )
 
     db.session.add(image_one)
+    db.session.add(image_two)
+    db.session.add(image_three)
+    db.session.add(image_four)
+    db.session.add(image_five)
     db.session.commit()
 
 

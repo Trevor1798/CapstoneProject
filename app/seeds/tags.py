@@ -8,7 +8,8 @@ def seed_tags():
         image_id=2, tag_name='sunsets'
     )
 
-    db.session.add(tag_one, tag_two)
+    db.session.add(tag_one)
+    db.session.add(tag_two)
     db.session.commit()
 
 def undo_tags():

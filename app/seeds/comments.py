@@ -8,7 +8,8 @@ def seed_comments():
         description = 'Wow! Spectacular!', user_id = 2, image_id= 3
     )
 
-    db.session.add(comment_one, comment_two)
+    db.session.add(comment_one)
+    db.session.add(comment_two)
     db.session.commit()
 
 

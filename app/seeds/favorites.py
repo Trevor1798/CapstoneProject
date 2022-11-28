@@ -9,10 +9,11 @@ def seed_favorites():
         user_id=3, image_id=3
     )
 
-    db.session.add(favorite_one, favorite_two)
+    db.session.add(favorite_one)
+    db.session.add(favorite_two)
     db.session.commit()
 
-    
+
 def undo_favorites():
     if environment == "production":
         db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")

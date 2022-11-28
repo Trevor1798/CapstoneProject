@@ -22,5 +22,6 @@ class Image(db.Model):
             'id': self.id,
             'user_id': self.user_id,
             'title': self.title,
-            'image_url': self.image_url
+            'image_url': self.image_url,
+            'description': self.description
         }
