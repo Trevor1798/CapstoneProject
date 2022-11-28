@@ -18,4 +18,4 @@ def undo_tags():
     else:
         db.session.execute("DELETE FROM users")
 
-    db.session.commit()
+        db.session.commit()

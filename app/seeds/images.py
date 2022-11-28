@@ -32,4 +32,4 @@ def undo_images():
     else:
         db.session.execute("DELETE FROM users")
 
-    db.session.commit()
+        db.session.commit()

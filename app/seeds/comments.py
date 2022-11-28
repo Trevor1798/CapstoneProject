@@ -19,4 +19,4 @@ def undo_comments():
     else:
         db.session.execute("DELETE FROM users")
 
-    db.session.commit()
+        db.session.commit()
