@@ -4,15 +4,19 @@ import { useHistory } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import ImageCard from '../Image/ImageCard'
+import { getComment } from '../../store/comment'
 const ExplorePage = () => {
     let dispatch = useDispatch()
     let history = useHistory()
     const imagesObj = useSelector(state => state.images)
-    console.log('imagesObj', imagesObj)
+    const commentObj = useSelector(state => state.comments)
     let images = Object.values(imagesObj)
+    let comment = Object.values(commentObj)
+    console.log('imagesObj', comment)
 
     useEffect(() => {
         dispatch(getImage())
+        dispatch(getComment())
     },[dispatch])
 
     return (
@@ -27,7 +31,7 @@ const ExplorePage = () => {
                     return (
 
                         <div key={image?.id}>
-                        <ImageCard image={image}/>
+                        <ImageCard image={image} comment={comment}/>
                         </div>
                 )
                 })}

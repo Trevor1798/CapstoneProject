@@ -5,11 +5,12 @@ import LogoutButton from '../auth/LogoutButton';
 import { useHistory } from 'react-router-dom';
 import './NavBar.css'
 import { logout } from '../../store/session';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const NavBar = () => {
   let history = useHistory()
   let dispatch = useDispatch()
+  const user = useSelector(state => state.session.user)
 
   return (
     <div className='splashpage-wrapper'>
@@ -24,11 +25,15 @@ const NavBar = () => {
                 </div>
                 </div>
                 <div className='upload-logout'>
+                  {user && (
+                    <>
                 <div className='upload' onClick={() => history.push('/images/upload')}>Upload</div>
                 <div className='logout' onClick={() =>dispatch(logout()).then(() =>  history.push('/'))}>Logout</div>
                 <div className='camera-pic'><i className="fa-solid fa-camera"></i>
                 <div className='profile-dropdown'></div>
                 </div>
+                </>
+                )}
                 </div>
             </div>
           </div>

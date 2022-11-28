@@ -4,6 +4,7 @@ import "./SplashPage.css"
 
 const SplashPage = () => {
     let history = useHistory()
+    const user = useSelector(state => state.session.user)
 
     return (
         <div className='splashpage-wrapper'>
@@ -20,8 +21,12 @@ const SplashPage = () => {
 
 
                 <div className='logins'>
+                    {!user && (
+                <>
                 <div className='splash-login' onClick={() => history.push('/login')}>Log In</div>
                 <div className='splash-login-new' onClick={() => history.push('/sign-up')}>Sign Up</div>
+                </>
+                )}
                 </div>
             </div>
 
@@ -31,7 +36,13 @@ const SplashPage = () => {
             <div className='text-wrapper'>
             <div className='splash-welcome'>Find your inspiration.</div>
             <div className='splash-text'>Join the Photo-Genius community, home to tens of billions of photos and 2 million groups</div>
-            <div className='start-for-free' onClick={() => history.push('/signup')}>Start for free</div>
+            {!user && (
+
+                <div className='start-for-free' onClick={() => history.push('/sign-up')}>Start for free</div>
+            )}
+            {user && (
+                <div className='start-for-free' onClick={() => history.push('/explore')}>Explore</div>
+            )}
             </div>
 
         </div>
