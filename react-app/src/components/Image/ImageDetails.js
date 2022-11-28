@@ -7,6 +7,7 @@ import { getComment } from "../../store/comment"
 // import {CommentCard} from "../Comments/CommentCard"
 import './ImageCSS/ImageDetails.css'
 import CommentCard from "../Comments/CommentCard"
+import CreateComment from "../Comments/CreateComment"
 
 
 const ImageDetails = () => {
@@ -77,13 +78,16 @@ const ImageDetails = () => {
             <div className='comments-wrapper'>
                         {/* <CommentCard comment={comment}/> */}
                     {filterComment?.map((comment) => (
-                        <div key={comment.id}>
+                        <div key={comment?.id}>
                         <CommentCard comment={comment}/>
                         {/* <div className="comments">{comment?.description}</div> */}
                         </div>
                         ))}
 
                 </div>
+            <div className="create-comment-detail">
+                <CreateComment/>
+            </div>
         </div>
 
         </div>

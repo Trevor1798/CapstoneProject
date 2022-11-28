@@ -41,11 +41,13 @@ export const getComment = () => async dispatch => {
 }
 
 export const createComment = (payload) => async dispatch => {
+    console.log('this is the payload in thunk', payload)
     const response = await fetch('/api/comments/create-comment', {
-        methods: "POST",
+        method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(payload)
     })
+
     if (response.ok){
         const newComment = await response.json()
         dispatch(createCommentAction(newComment))
@@ -55,7 +57,7 @@ export const createComment = (payload) => async dispatch => {
 
 export const updateComment = (payload, commentId) => async dispatch => {
     const response = await fetch(`/api/comments/${commentId}`, {
-        methods: "PUT",
+        method: "PUT",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(payload)
     })
@@ -67,7 +69,7 @@ export const updateComment = (payload, commentId) => async dispatch => {
 
 export const deleteComment = (id) => async dispatch => {
     const response = await fetch(`/api/comments/${id}`, {
-        methods: "DELETE",
+        method: "DELETE",
         headers: {"Content-Type": "application/json"},
     })
     if (response.ok){
