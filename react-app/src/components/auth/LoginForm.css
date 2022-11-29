@@ -68,7 +68,7 @@ body, html {
     margin-top: 20px;
     display: flex;
     position: relative;
-    left: 25px;
+    left: 30px;
     width: 80%;
     height: 40px;
     justify-content: center;
@@ -81,7 +81,7 @@ body, html {
     margin-top: 10px;
     display: flex;
     position: relative;
-    left: 25px;
+    left: 30px;
     width: 80%;
     height: 40px;
     justify-content: center;
@@ -95,7 +95,7 @@ body, html {
     /* width: 85%; */
     margin-top: 10px;
     position: relative;
-    left: 25px;
+    left: 30px;
     width: 82%;
     height: 40px;
     align-items: center;
@@ -103,6 +103,7 @@ body, html {
     color: white;
     background-color:#128FDC;
     border: none;
+    cursor: pointer;
 }
 .demo{
     display: flex;
@@ -110,7 +111,7 @@ body, html {
     /* width: 85%; */
     margin-top: 10px;
     position: relative;
-    left: 95px;
+    left: 100px;
     width: 42%;
     height: 40px;
     align-items: center;
@@ -118,6 +119,7 @@ body, html {
     color: white;
     background-color:#128FDC;
     border: none;
+    cursor: pointer;
 }
 .signup-wrapper {
     display: flex;
@@ -129,6 +131,16 @@ body, html {
     color:#128FDC;
     text-decoration: underline;
     cursor: pointer;
+}
+.demo-user {
+    cursor: pointer;
+}
+.error-wrapper {
+    position: relative;
+    left: 32px;
+    top: 10px;
+    color: red;
+
 }
 /* .email-input {
 

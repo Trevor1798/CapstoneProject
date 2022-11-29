@@ -16,7 +16,7 @@ const LoginForm = () => {
     e.preventDefault();
     const data = await dispatch(login(email, password));
     if (data) {
-      setErrors(data);
+      setErrors(["Please provide valid credentials"]);
     }
   };
 
@@ -27,6 +27,10 @@ const LoginForm = () => {
   const updatePassword = (e) => {
     setPassword(e.target.value);
   };
+  const demoUserClick = (e) => {
+    e.preventDefault()
+    dispatch(login("demo@aa.io", "password"))
+  }
 
   if (user) {
     return <Redirect to='/' />;
@@ -43,9 +47,9 @@ const LoginForm = () => {
       <div className='login-genius-logo2'>•</div>
       </div>
       <div className='login-welcome'>Log in to Photo-Genius</div>
-      <div classname='error-wrapper'>
+      <div classname='error-wrappers'>
         {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
+          <div className='error-wrapper' key={ind}>{error}</div>
           ))}
       </div>
       <div className='email'>
@@ -55,6 +59,9 @@ const LoginForm = () => {
           placeholder='Email'
           value={email}
           onChange={updateEmail}
+          required
+          minLength={4}
+          maxLength={50}
           />
       </div>
       <div className='password'>
@@ -64,11 +71,14 @@ const LoginForm = () => {
           placeholder='Password'
           value={password}
           onChange={updatePassword}
+          required
+          minLength={4}
+          maxLength={50}
           />
         <button className='login-button' type='submit'>Login</button>
       </div>
       <div className='demo-user'>
-        <button className='demo' type="submit" onClick={() => {setEmail('demo@aa.io'); setPassword('password');}}>Demo User</button>
+        <button className='demo' onClick={demoUserClick}>Demo User</button>
       </div>
       <div className='signup-wrapper'>
         <div className='signup-welcome'>Not a member yet?</div>
