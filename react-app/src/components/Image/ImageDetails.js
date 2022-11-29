@@ -21,7 +21,6 @@ const ImageDetails = () => {
     const users = useSelector(state => state.users)
 
 
-    const imagesArr = Object.values(images)
     const comment = Object.values(commentsObj)
     const filterComment = comment?.filter(comment => comment?.image_id === parseInt(imageId))
 

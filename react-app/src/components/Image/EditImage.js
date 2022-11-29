@@ -11,10 +11,13 @@ const EditImage = () => {
 
     const user = useSelector(state => state.session.user)
     const images = useSelector(state => state.images)
+    const imageDetail = images[imageId]
 
-    const [title, setTitle] = useState('')
-    const [description, setDescription] = useState('')
-    const [image_url, setImageUrl] = useState('')
+    // console.log('trying to save state for edit image',imageDetail?.title)
+
+    const [title, setTitle] = useState(imageDetail?.title)
+    const [description, setDescription] = useState(imageDetail?.description)
+    const [image_url, setImageUrl] = useState(imageDetail?.image_url)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -24,28 +27,28 @@ const EditImage = () => {
             image_url,
             user_id: user.id
         }
-        console.log("edit component images", images)
+        // console.log("edit component images", images)
         dispatch(editImage(image, imageId))
         history.push(`/images/${imageId}/`)
     }
 
     return (
-        <div clssName='edit-image-wrapper'>
+        <div className='edit-image-wrapper'>
             <form className="edit-image-form" onSubmit={handleSubmit}>
             <div className='errors-map'>
 
             </div>
             <div className='left-side-input wrapper'>
                 <div className='image-url'>
-                <input className='image-url-input' type='text' placeholder='Image URL'
+                <input className='image-url-input' type='text' placeholder='Image URL' value={image_url}
                         required onChange={(e) => setImageUrl(e.target.value)}/>
                 </div>
             <div className='image-title'>
-                <input className='title-input' type='text' placeholder='Title'
+                <input className='title-input' type='text' placeholder='Title' value={title}
                         required onChange={(e) => setTitle(e.target.value)}/>
             </div>
             <div className='image-description'>
-                <input className='description-input' type='text' placeholder='Description'
+                <input className='description-input' type='text' placeholder='Description' value={description}
                         required onChange={(e) => setDescription(e.target.value)}/>
             </div>
             <div className='image-create-submit'>
