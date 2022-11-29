@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
+import './LoginForm.css'
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -31,34 +32,38 @@ const LoginForm = () => {
   }
 
   return (
+    <div className='login-wrapper'>
+      <img className='background-image' src='https://live.staticflickr.com/3829/14240294606_8a157ddfc2_b.jpg'></img>
+
+    <div className='login-container'>
     <form onSubmit={onLogin}>
-      <div>
+      <div classname='error-wrapper'>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
-        ))}
+          ))}
       </div>
-      <div>
-        <label htmlFor='email'>Email</label>
-        <input
+      <div className='email'>
+        <input className='email-input'
           name='email'
           type='text'
           placeholder='Email'
           value={email}
           onChange={updateEmail}
-        />
+          />
       </div>
-      <div>
-        <label htmlFor='password'>Password</label>
-        <input
+      <div className='password'>
+        <input className='password-input'
           name='password'
           type='password'
           placeholder='Password'
           value={password}
           onChange={updatePassword}
-        />
+          />
         <button type='submit'>Login</button>
       </div>
     </form>
+    </div>
+      </div>
   );
 };
 

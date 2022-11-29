@@ -27,7 +27,7 @@ const SplashPage = () => {
                 <div className='splash-login-new' onClick={() => history.push('/sign-up')}>Sign Up</div>
                 </>
                 )}
-                </div>
+                </div>  
             </div>
 
         <div className='splashpage'>
