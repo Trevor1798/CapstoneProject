@@ -36,10 +36,11 @@ const ImageDetails = () => {
     // console.log('images ids', image_ids)
     // console.log('23048242842984902', comment)
 
-    const handleDelete = (e) => {
-        e.preventDefault()
-        dispatch(deleteImage(imageId))
-        history.push('/explore')
+    const handleDelete = () => {
+        // e.preventDefault()
+        dispatch(deleteImage(imageId)).then(() =>{
+            history.push('/explore')
+        })
 
     }
 
