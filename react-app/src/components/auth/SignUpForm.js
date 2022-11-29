@@ -52,11 +52,15 @@ const SignUpForm = () => {
   }
 
   return (
+    <div className='login-wrapper'>
+
+
+    <img className='background-image' src='https://live.staticflickr.com/3829/14240294606_8a157ddfc2_b.jpg'></img>
     <form onSubmit={onSignUp}>
       <div>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
-        ))}
+          ))}
       </div>
       <div>
         <label>User Name</label>
@@ -65,7 +69,7 @@ const SignUpForm = () => {
           name='username'
           onChange={updateUsername}
           value={username}
-        ></input>
+          ></input>
       </div>
       <div>
         <div>
@@ -92,7 +96,7 @@ const SignUpForm = () => {
           name='email'
           onChange={updateEmail}
           value={email}
-        ></input>
+          ></input>
       </div>
       <div>
         <label>Password</label>
@@ -101,7 +105,7 @@ const SignUpForm = () => {
           name='password'
           onChange={updatePassword}
           value={password}
-        ></input>
+          ></input>
       </div>
       <div>
         <label>Repeat Password</label>
@@ -111,10 +115,11 @@ const SignUpForm = () => {
           onChange={updateRepeatPassword}
           value={repeatPassword}
           required={true}
-        ></input>
+          ></input>
       </div>
       <button type='submit'>Sign Up</button>
     </form>
+  </div>
   );
 };
 
