@@ -1,22 +1,30 @@
 .image-card-wrapper{
+position:relative;
+width: auto;
+top: 75px
+/* height: 100vh; */
 
+/* margin-left: 20px;
+margin-right: 20px; */
 
 
 }
 .image-card {
-width: 100%;
-min-width: 200px;
-max-height: 270px;
-
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* grid-template-columns: repeat(5, 1fr); */
+    min-width: 200px;
+    max-height: 270px;
+    height: auto;
+    object-fit: cover;
+    flex-direction: column;
+    gap: 0
+    /* flex-direction: row; */
 
 }
-.images {
-width:100%;
-min-width: 200px;
-max-height: 270px;
+.images{}
 
-
-}
 .image-title {
 
 

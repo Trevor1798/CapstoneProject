@@ -18,10 +18,11 @@ const NavBar = () => {
             <div className='splashss-nav'>
 
                 <div className='splash-top-left'>
-                <div className='splash-logo-header' onClick={() => history.push('/')}>
+                <div className='splash-logo-header'>
                 <div className='photo-genius-logo1'>•</div>
                 <div className='photo-genius-logo2'>•</div>
-                <div className='photo-genius'>photo-genius</div>
+                <div className='photo-genius' onClick={() => history.push('/')}>photo-genius</div>
+                <div className='explore' onClick={() => history.push('/explore')}>Explore</div>
                 </div>
                 </div>
                 <div className='upload-logout'>
