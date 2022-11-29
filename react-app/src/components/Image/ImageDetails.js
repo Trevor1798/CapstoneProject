@@ -53,10 +53,10 @@ const ImageDetails = () => {
     return (
         <div className='image-details-wrapper'>
             <div className='image-detail'>
-                <img className='image' src={image_ids?.image_url} onError={e => e.currentTarget.src = ''}></img>
+                <img className='image' src={image_ids?.image_url} onError={e => e.currentTarget.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png"}></img>
             </div>
             <div className="image-profile-details">
-                {imageOwner?.id === image_ids?.user_id && (
+                {imageOwner?.id === user?.id && (
                     <div className="update-delete-wrapper">
                         <div className="update-image">
                         <i className="pen fa-regular fa-pen-to-square" onClick={() => history.push(`/images/${image_ids?.id}/edit`)}></i>

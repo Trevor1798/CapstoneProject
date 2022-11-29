@@ -10,17 +10,24 @@ const CommentCard = ({comment}) => {
     const {imageId} = useParams()
 
     const user = useSelector(state => state.session.user)
-    const allUsers = useSelector(state => state.users)
-    console.log('dfefefeffefe', allUsers)
-    const commentArr = Object.values(comment)
-    const comment_ids = commentArr[imageId]
-    const commentOwner = comment_ids?.user_id
+    const users = useSelector(state => state.users)
     const comments = useSelector(state => state.comments)
+
+
+    const commentArr = Object.values(comment)
+
+
+    const commentOwner = users[comment?.user_id]
+    // const commentOwner = comment_ids?.user_id
     // const image_ids = images[imageId]
-    // const imageOwner = image_ids?.user_id
-//
-    console.log('COMMENT IDS--------', commentArr.user_id)
-    const [description, setDescription ] = useState('')
+    // const imageOwner = users[image_ids?.user_id]
+
+
+    console.log('dfefefeffefe', commentOwner?.id, user?.id)
+    console.log('COMMENT IDS--------')
+
+
+    const [description, setDescription ] = useState(comment?.description)
     const [canEdit, setCanEdit] = useState(false)
 
 
@@ -39,23 +46,22 @@ const CommentCard = ({comment}) => {
         <div className="comment-wrapper">
             <i className="fa-regular fa-user"></i>
             <div className="comments-user">
-                {user?.first_name}{user?.last_name}
+                {commentOwner?.first_name}{' '}{commentOwner?.last_name}
             </div>
             <div className="edit-comments">
-                {comment_ids === user?.id && (
+                {commentOwner?.id === user?.id && (
                     <div className='edit-comment'>
-                        {!canEdit && (
+                        {!canEdit ?
                         <>
                         <i className="fa-regular fa-pen-to-square" onClick={() => setCanEdit(true)}></i>
-                        <i className="fa-solid fa-trash-can" onClick={() => dispatch(deleteComment(comment?.id))}></i>"
+                        <i className="fa-solid fa-trash-can" onClick={() => dispatch(deleteComment(comment?.id))}></i>
                         </>
-                        )}
-                        {canEdit && (
+                        :
                         <>
                         <i className="fa-regular fa-pen-to-square" onClick={() => setCanEdit(false)}></i>
-                        <i className="fa-solid fa-trash-can" onClick={() => dispatch(deleteComment(comment?.id))}></i>"
+                        <i className="fa-solid fa-trash-can" onClick={() => dispatch(deleteComment(comment?.id))}></i>
                         </>
-                        )}
+                        }
                         </div>
                 )}
             </div>

@@ -21,10 +21,6 @@ const ExplorePage = () => {
 
     return (
         <div className="explore-page-wrapper">
-            <div className='explore-nav'>
-                <div className='explore' onClick={() => history.push('/explore')}>Explore</div>
-                <div className='trending' onClick={() => history.push('/trending')}>Trending</div>
-            </div>
         <div className='explore-page'>
             <div className='explore-images'>
                 {images.map((image) => {

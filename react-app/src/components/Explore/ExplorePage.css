@@ -1,0 +1,30 @@
+.explore-page-wrapper{
+
+display: flex;
+justify-content: center;
+gap: 0;
+
+}
+
+.explore-page{
+display: flex;
+justify-content: center;
+flex-direction: column;
+max-width: 80%;
+gap: 0
+
+}
+
+.explore-images {
+display: flex;
+flex-wrap: wrap;
+/* justify-content: space-between; */
+box-sizing: content-box;
+width: 100%;
+gap: 0 5px;
+flex-grow: 1
+}
+
+.explore-images > * {
+    flex-grow: 1
+}

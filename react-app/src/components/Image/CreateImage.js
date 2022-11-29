@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {useHistory} from 'react-router-dom'
-import { createImage } from '../../store/image'
+import { createImage, getImage } from '../../store/image'
 const CreateImage = () => {
     const dispatch = useDispatch()
     const history = useHistory()
-    const user = useSelector(state => state.images)
+    const images = useSelector(state => state.images)
+    const user = useSelector(state => state.session.user)
 
     const [description, setDescription] = useState('')
     const [title, setTitle] = useState('')
@@ -17,10 +18,11 @@ const CreateImage = () => {
         let newImage = {
             title,
             description,
-            image_url
+            image_url,
+            user_id: user.id
         }
         console.log('this is the data in the componoent', newImage)
-        dispatch(createImage(newImage))
+        dispatch(createImage(newImage)).then(() => history.push('/explore'))
         // .then(() => history.push('/'))
     }
 
