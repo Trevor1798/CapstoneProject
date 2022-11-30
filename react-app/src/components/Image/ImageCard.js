@@ -48,13 +48,15 @@ const ImageCard = ({image, comment, imageId}) => {
                 <div className='image-creator'>
                         <div className="firstandlast">
                             {`by ${imageOwner?.first_name} ${imageOwner?.last_name}`}
+                            <div className="images-comments">
+                            <i className="fa-regular fa-comment-dots"></i>
+                            {filterComment?.length}
+                            </div>
                         </div>
+            </div>
+
+                
                 </div>
-            </div>
-            <div className="comment-icon">
-            <i className="fa-regular fa-comment-dots"></i>
-            </div>
-            <div className='images-comment-count'>{filterComment?.length}</div>
         </div>
     )
 }

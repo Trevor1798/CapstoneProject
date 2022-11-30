@@ -27,7 +27,7 @@ const SplashPage = () => {
                 <div className='splash-login-new' onClick={() => history.push('/sign-up')}>Sign Up</div>
                 </>
                 )}
-                </div>  
+                </div>
             </div>
 
         <div className='splashpage'>
@@ -35,7 +35,8 @@ const SplashPage = () => {
 
             <div className='text-wrapper'>
             <div className='splash-welcome'>Find your inspiration.</div>
-            <div className='splash-text'>Join the Photo-Genius community, home to tens of billions of photos and 2 million groups</div>
+            <div className='splash-text'>Join the Photo-Genius community, home to tens of billions of</div>
+            <div className='splash-text-pt2'>photos and 2 million groups</div>
             {!user && (
 
                 <div className='start-for-free' onClick={() => history.push('/sign-up')}>Start for free</div>
