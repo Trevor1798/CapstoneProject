@@ -1,19 +1,18 @@
-.login-container {
-display: flex;
+.signup-container {
+    display: flex;
 position: absolute;
 width: 100%;
-max-width: 350px;
+max-width: 450px;
 height: 100%;
-max-height: 350px;
+max-height: 650px;
 /* background-color: white; */
 justify-content: center;
-/* border: 1px solid black; */
-/* z-index:1; */
 }
 body, html {
     margin: 0;
     z-index: 0;
 }
+
 .background-image {
     object-fit: cover;
     width: 100%;
@@ -21,7 +20,7 @@ body, html {
     /* position: absolute; */
 }
 
-.login-wrapper {
+.signup-wrapper {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -30,45 +29,39 @@ body, html {
     object-fit: cover;
     align-items: center;
     position: fixed;
-    /* position: fixed; */
-    /* width: 100%; */
-    /* z-index: 2; */
+    margin: 0;
+
 }
 
-.login-form {
-
+.signup-form{
     width: 100%;
     border-radius: 4px;
     background-color: white;
 
-
 }
+.form-wrapper {
+    margin-top: 15px;
+}
+
 .logo {
     display: flex;
     justify-content: center;
-}
-.login-genius-logo1 {
-    color: rgb(98, 0, 255);
-    font-size: 40px;
-    border-radius: 50%;
-}
-.login-genius-logo2 {
-    color: rgb(255, 0, 0);
-    font-size: 40px;
-    border-radius: 50%;
+
 }
 
-.login-welcome {
+.signup-welcome {
+
     display: flex;
     justify-content: center;
     font-size: 22px;
     font-weight: 500;
 }
-.email-input {
+
+.username-input {
     margin-top: 20px;
     display: flex;
     position: relative;
-    left: 30px;
+    left: 40px;
     width: 80%;
     height: 40px;
     justify-content: center;
@@ -77,25 +70,78 @@ body, html {
 
 }
 
-.password-input {
-    margin-top: 10px;
+.first-name-input {
+    margin-top: 20px;
     display: flex;
     position: relative;
-    left: 30px;
+    left: 40px;
     width: 80%;
     height: 40px;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 5px;;
+    border: 1px solid rgb(43, 41, 41);
+
+}
+
+.last-name-input {
+
+    margin-top: 20px;
+    display: flex;
+    position: relative;
+    left: 40px;
+    width: 80%;
+    height: 40px;
+    justify-content: center;
+    border-radius: 5px;;
     border: 1px solid rgb(43, 41, 41);
 }
 
-.login-button {
+.email-input {
+
+    margin-top: 20px;
+    display: flex;
+    position: relative;
+    left: 40px;
+    width: 80%;
+    height: 40px;
+    justify-content: center;
+    border-radius: 5px;;
+    border: 1px solid rgb(43, 41, 41);
+}
+
+.password-input {
+
+    margin-top: 20px;
+    display: flex;
+    position: relative;
+    left: 40px;
+    width: 80%;
+    height: 40px;
+    justify-content: center;
+    border-radius: 5px;;
+    border: 1px solid rgb(43, 41, 41);
+}
+
+.repeat-password-input {
+    margin-top: 20px;
+    display: flex;
+    position: relative;
+    left: 40px;
+    width: 80%;
+    height: 40px;
+    justify-content: center;
+    border-radius: 5px;;
+    border: 1px solid rgb(43, 41, 41);
+}
+
+.signup-button {
+
     display: flex;
     justify-content: center;
     /* width: 85%; */
-    margin-top: 10px;
+    margin-top: 15px;
     position: relative;
-    left: 30px;
+    left: 40px;
     width: 82%;
     height: 40px;
     align-items: center;
@@ -105,50 +151,18 @@ body, html {
     border: none;
     cursor: pointer;
 }
-.demo{
+
+.signup-bottom-wrapper {
+
     display: flex;
     justify-content: center;
-    /* width: 85%; */
-    margin-top: 10px;
+    margin-top: 20px
+}
+
+.errors-map {
+
     position: relative;
-    left: 100px;
-    width: 42%;
-    height: 40px;
-    align-items: center;
-    border-radius: 5px;
-    color: white;
-    background-color:#128FDC;
-    border: none;
-    cursor: pointer;
-}
-.signup-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px
-}
-.redirect{
-    margin-left: 5px;
-    color:#128FDC;
-    text-decoration: underline;
-    cursor: pointer;
-}
-.demo-user {
-    cursor: pointer;
-}
-.error-wrapper {
-    position: relative;
-    left: 32px;
-    top: 10px;
+    left: 42px;
+    top: 6px;
     color: red;
-
 }
-/* .email-input {
-
-    position: absolute;
-    top: 500px
-}
-.password-input {
-
-    position: absolute;
-    top: 500px;
-} */
