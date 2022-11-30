@@ -30,9 +30,9 @@ const NavBar = () => {
                     <>
                 <div className='upload' onClick={() => history.push('/images/upload')}>Upload</div>
                 <div className='logout' onClick={() =>dispatch(logout()).then(() =>  history.push('/'))}>Logout</div>
-                <div className='camera-pic'><i className="fa-solid fa-camera"></i>
+                {/* <div className='camera-pic'><i className="fa-solid fa-camera"></i> */}
                 <div className='profile-dropdown'></div>
-                </div>
+                {/* </div> */}
                 </>
                 )}
                 </div>
