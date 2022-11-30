@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import './SignupForm.css'
 
 const SignUpForm = () => {
+  let history = useHistory()
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
   const [first_name, setFirstName] = useState('')
@@ -21,9 +23,20 @@ const SignUpForm = () => {
       if (data) {
         setErrors(data)
       }
+      let errors = []
+      if (username.length < 4 || username.length > 50) errors.push('User name must be between 4 and 50 characters')
+      if (first_name.length < 3 || first_name.length > 50) errors.push('First name must be between 3 and 50 characters')
+      if (last_name.length < 3 || last_name.length > 50) errors.push('Last name must be between 3 and 50 characters')
+      if (email.length < 4 || email.length > 100) errors.push("Email must be between 4 and 100 characters")
+      if (password.length < 6 || password.length > 50) errors.push('Password must be between 6 and 50 characters')
+      setErrors(errors)
+      if (password !== repeatPassword) setErrors('Passwords do not match ')
     }
   };
 
+  // useEffect(() => {
+
+  // },[username, first_name, last_name, email, password])
   const updateUsername = (e) => {
     setUsername(e.target.value);
   };
@@ -52,73 +65,90 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className='login-wrapper'>
+    <div className='signup-wrapper'>
+    <img className='background-image' src='https://wallpaperaccess.com/full/900704.jpg'></img>
+    <div className='signup-container'>
 
+    <form className='signup-form' onSubmit={onSignUp}>
 
-    <img className='background-image' src='https://live.staticflickr.com/3829/14240294606_8a157ddfc2_b.jpg'></img>
-    <form onSubmit={onSignUp}>
-      <div>
+    <div className='logo'>
+      <div className='login-genius-logo1'>•</div>
+      <div className='login-genius-logo2'>•</div>
+        </div>
+        <div className='signup-welcome'>Sign up for Photo-Genius</div>
+        <div className='errors'>
         {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
+          <div className='errors-map' key={ind}>{error}</div>
           ))}
       </div>
-      <div>
-        <label>User Name</label>
-        <input
+      <div className='form-wrapper'>
+      <div className='username'>
+        <input className='username-input'
           type='text'
           name='username'
           onChange={updateUsername}
           value={username}
+          placeholder='Username'
           ></input>
       </div>
-      <div>
-        <div>
-          <label>First Name</label>
-          <input
+      <div className='first-name'>
+          <input className='first-name-input'
           type='text'
           name='first name'
           onChange={updateFirstName}
           value={first_name}
+          placeholder='First name'
           ></input>
-        </div>
-        <div>
-          <label>Last Name</label>
-          <input
+          </div>
+
+        <div className='last-name'>
+          <input className='last-name-input'
           type='text'
           name='last name'
           onChange={updateLastName}
           value={last_name}
+          placeholder='Last name'
           ></input>
         </div>
-        <label>Email</label>
-        <input
+        <div className='email'>
+        <input className='email-input'
           type='text'
           name='email'
           onChange={updateEmail}
           value={email}
+          placeholder='Email'
           ></input>
-      </div>
-      <div>
-        <label>Password</label>
-        <input
+          </div>
+      <div className='password'>
+        <input className='password-input'
           type='password'
           name='password'
           onChange={updatePassword}
           value={password}
+          placeholder='Password'
           ></input>
       </div>
-      <div>
-        <label>Repeat Password</label>
-        <input
+      <div className='-repeat-password'>
+
+        <input className='repeat-password-input'
           type='password'
           name='repeat_password'
           onChange={updateRepeatPassword}
           value={repeatPassword}
+          placeholder='Confirm Password'
           required={true}
           ></input>
       </div>
-      <button type='submit'>Sign Up</button>
+      <div className='below-signup'>
+      <button className='signup-button' type='submit'>Sign Up</button>
+          <div className='signup-bottom-wrapper'>
+        <div className='signup-bottom'>Already have an account?</div>
+        <div className='redirect' onClick={() => history.push('/login')}>Login here</div>
+          </div>
+      </div>
+          </div>
     </form>
+          </div>
   </div>
   );
 };
