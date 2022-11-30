@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { useHistory, useParams } from "react-router"
 import { editImage } from "../../store/image"
 import { updateComment, deleteComment } from "../../store/comment"
+import './CommentCard.css'
 
 const CommentCard = ({comment}) => {
     const dispatch = useDispatch()
@@ -44,22 +45,22 @@ const CommentCard = ({comment}) => {
     }
     return (
         <div className="comment-wrapper">
-            <i className="fa-regular fa-user"></i>
+            <img className="user-comments" src='https://freesvg.org/img/abstract-user-flat-4.png'></img>
             <div className="comments-user">
                 {commentOwner?.first_name}{' '}{commentOwner?.last_name}
             </div>
             <div className="edit-comments">
                 {commentOwner?.id === user?.id && (
-                    <div className='edit-comment'>
+                    <div className='edit-comments'>
                         {!canEdit ?
                         <>
-                        <i className="fa-regular fa-pen-to-square" onClick={() => setCanEdit(true)}></i>
-                        <i className="fa-solid fa-trash-can" onClick={() => dispatch(deleteComment(comment?.id))}></i>
+                        <div className="edit-comment" onClick={() => setCanEdit(true)}>Edit your comment</div>
+                        <div className="delete-comment" onClick={() => dispatch(deleteComment(comment?.id))}>Delete Comment</div>
                         </>
                         :
                         <>
-                        <i className="fa-regular fa-pen-to-square" onClick={() => setCanEdit(false)}></i>
-                        <i className="fa-solid fa-trash-can" onClick={() => dispatch(deleteComment(comment?.id))}></i>
+                        <div className="delete-comment-false" onClick={() => setCanEdit(false)}></div>
+                        <div className="edit-comment-false" onClick={() => dispatch(deleteComment(comment?.id))}></div>
                         </>
                         }
                         </div>
@@ -71,7 +72,7 @@ const CommentCard = ({comment}) => {
             <div className="errors">
 
             </div>
-            <div className="edit-comment">
+            <div className="edit-commentsss">
                 {canEdit ?
                 <div>
                 <form className='edit-comment-form'>

@@ -51,31 +51,32 @@ const ImageDetails = () => {
     }, [dispatch])
 
     return (
-        <div className='image-details-wrapper'>
-            <div className='image-detail'>
-                <img className='image' src={image_ids?.image_url} onError={e => e.currentTarget.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png"}></img>
-            </div>
-            <div className="image-profile-details">
-                {imageOwner?.id === user?.id && (
-                    <div className="update-delete-wrapper">
-                        <div className="update-image">
-                        <i className="pen fa-regular fa-pen-to-square" onClick={() => history.push(`/images/${image_ids?.id}/edit`)}></i>
-                        </div>
-                        <div className='delete-image-wrapper'>
-                        <i className="trash fa-solid fa-trash" onClick={() => handleDelete(image_ids?.id) }></i>
-                        </div>
-                    </div>
-                )}
-                </div>
 
+        <div className='image-details-wrapper'>
+            <div className="image-profile-details">
+            <div className='image-detail'>
+                <img className='image-detail-image' src={image_ids?.image_url} onError={e => e.currentTarget.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png"}></img>
+                <div className="inner-content">
+
+                {imageOwner?.id === user?.id && (
+                    <>
+                        <i className="pen fa-regular fa-pen-to-square" onClick={() => history.push(`/images/${image_ids?.id}/edit`)}></i>
+                        <i className="trash fa-solid fa-trash" onClick={() => handleDelete(image_ids?.id) }></i>
+                    </>
+                        )}
+                    </div>
+                </div>
+                </div>
         <div className="below-image-wrapper">
+            <div className="below-container">
+
+            <img className="user" src='https://freesvg.org/img/abstract-user-flat-4.png'></img>
             <div className="user-description">
-            <i className="user fa-solid fa-user-tie"></i>
             <div className="user-name">
-                <div>{imageOwner?.first_name}</div>
+                <div>{imageOwner?.first_name}{' '}{imageOwner?.last_name}</div>
+                <div className="image-detail-title">{image_ids?.title}</div>
+                <div className="image-detail-description">{image_ids?.description}</div>
             </div>
-            <div className="image-title">{image_ids?.title}</div>
-            <div className="image-description">{image_ids?.description}</div>
             </div>
             <div className="views-faves-comments-wrapper">{filterComment?.length} comments</div>
             <div className='comments-wrapper'>
@@ -88,12 +89,12 @@ const ImageDetails = () => {
                     ))}
 
                 </div>
-            <div className="create-comment-detail">
-                <CreateComment/>
-            </div>
+            <div className="create-comment-detail"><CreateComment/></div>
         </div>
+        </div>
+    </div>
 
-        </div>
+
 
     )
 
