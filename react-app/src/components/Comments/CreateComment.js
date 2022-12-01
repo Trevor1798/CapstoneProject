@@ -27,7 +27,7 @@ const CreateComment = () => {
             return
         }
         console.log("this is comments in component", comment)
-        dispatch(createComment(comment)).then(() => dispatch(getComment()))
+        dispatch(createComment(comment)).then(() => setDescription("")).then(() => dispatch(getComment()))
 
     }
 
