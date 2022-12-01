@@ -30,9 +30,9 @@ const NavBar = () => {
                     <>
                 <div className='upload' onClick={() => history.push('/images/upload')}>Upload</div>
                 <div className='logout' onClick={() =>dispatch(logout()).then(() =>  history.push('/'))}>Logout</div>
-                <a href='https://github.com/Trevor1798/CapstoneProject/wiki'>
+                <a href='https://github.com/Trevor1798/CapstoneProject/wiki' target='_blank'>
                         <i className="github2 fa-brands fa-github"></i></a>
-                        <a href='https://www.linkedin.com/in/trevor-jones-458b75202/'>
+                        <a href='https://www.linkedin.com/in/trevor-jones-458b75202/' target='_blank'>
                         <i className="linkedin2 fa-brands fa-linkedin"></i></a>
                 {/* <div className='camera-pic'><i className="fa-solid fa-camera"></i> */}
                 <div className='profile-dropdown'></div>

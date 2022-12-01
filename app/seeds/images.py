@@ -3,109 +3,85 @@ from app.models import db, environment, SCHEMA, Image
 
 def seed_images():
     image_1 = Image(
-        title = 'James Webb Space Telescope', user_id=1, description='Welcome to the new era of space images.', image_url='https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/web_first_images_release.png?itok=g21NrdRw'
+        title = 'James Webb Space Telescope', user_id=1, description='Welcome to the new era of space images.', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669931900/Photo-genius/web_first_images_release_1_ocpayj.png'
     )
     image_2 = Image(
-        title = 'Florida Sunset', user_id=2, description='Does it get more beautiful than this Miami sunset?', image_url='https://www.getlostwithjackie.com/wp-content/uploads/2016/07/SunsetMiamiFloridaGLWJ.png'
+        title = 'Florida Sunset', user_id=2, description='Does it get more beautiful than this Miami sunset?', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669935548/Photo-genius/SunsetMiamiFloridaGLWJ_snzh6f.png'
     )
     image_3= Image(
-        title = 'light butterfly', description='Surreal light art.', user_id=3, image_url='https://64.media.tumblr.com/b4235bc088703bd70c3e17bd2161a06a/9841d0484512d868-3c/s540x810/1e9e2f92eeb22a97b3f54a4fdec176fb8a78986a.jpg'
+        title = 'light butterfly', description='Surreal light art.', user_id=3, image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669935593/Photo-genius/tumblr_b4235bc088703bd70c3e17bd2161a06a_1e9e2f92_540_hmbayu.jpg'
     )
     image_4 = Image(
-        title = 'sky', user_id=4, description=' Surreal light art of the sky.', image_url='https://64.media.tumblr.com/49cee743c0993ec11c9c5394aa55ef9c/732fd28b2b4a72b8-3f/s500x750/1a4ebb3796624a44c504a08ca8223867ea431d1d.jpg'
+        title = 'sky', user_id=4, description=' Surreal light art of the sky.', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669935647/Photo-genius/tumblr_49cee743c0993ec11c9c5394aa55ef9c_1a4ebb37_500_qhkdls.jpg'
     )
     image_5 = Image(
-        title = 'JWST ', user_id=5, description='Image of the James Webb Space Telescope!', image_url='https://cdn.mos.cms.futurecdn.net/CvKUQQ5jB7vHkGZcAxGNpB.jpg'
+        title = 'Ginza Tokyo', user_id=5, description='Night life in Ginza, Tokyo', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669935708/Photo-genius/ginza-tokyo-around-midnight-4k_1602353876-2048x1575_mhxupw.jpg'
     )
     image_6 = Image(
-        title = 'Hong Kong CityScape', user_id=6, description='Look at this image of this Hong Kong Building!', image_url='https://www.pixel4k.com/wp-content/uploads/2020/08/city-hong-kong-cityscape-urban-metropolis-building_1596916637-2048x1280.jpg'
+        title = 'Hong Kong CityScape', user_id=6, description='Look at this image of this Hong Kong Building!', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669935763/Photo-genius/city-hong-kong-cityscape-urban-metropolis-building_1596916637-2048x1280_zh8zc3.jpg'
     )
     image_7 = Image(
-        title = 'Singapore CityScape ', user_id=7, description='Beautiful evening in Singapore City.', image_url='https://www.pixel4k.com/wp-content/uploads/2019/09/singapore-skyscrapers-marina-bay-sands-evening_1569187783.jpg'
+        title = 'Singapore CityScape ', user_id=7, description='Beautiful evening in Singapore City.', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669935799/Photo-genius/singapore-skyscrapers-marina-bay-sands-evening_1569187783_rcsbxe.jpg'
     )
     image_8= Image(
-        title = 'Lake Wakatipu', user_id=8, description='Mountain range in New Zealand.', image_url='https://www.pixel4k.com/wp-content/uploads/2019/09/lake-wakatipu-in-newzealand_1569187788.jpg'
+        title = 'Lake Wakatipu', user_id=8, description='Mountain range in New Zealand.', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669935831/Photo-genius/lake-wakatipu-in-newzealand_1569187788_yr5kct.jpg'
     )
     image_9 = Image(
-        title = 'Allegheny Mountains', user_id=1, description='Image of the Allegheny mountain range.', image_url='https://www.pixel4k.com/wp-content/uploads/2021/08/allegheny-mountains-4k_1630079636-2048x1365.jpg'
+        title = 'Allegheny Mountains', user_id=1, description='Image of the Allegheny mountain range.', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669935865/Photo-genius/allegheny-mountains-4k_1630079636-2048x1365_rg39xm.jpg'
     )
     image_10 = Image(
-        title = 'Mars Sunset', user_id=2, description='Look at this photo I took on my vacation to Mars!', image_url='https://www.pixel4k.com/wp-content/uploads/2021/08/mars-sunset-4k_1629256144-2048x1153.jpg'
+        title = 'Mars Sunset', user_id=2, description='Look at this photo I took on my vacation to Mars!', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669935907/Photo-genius/mars-sunset-4k_1629256144-2048x1153_aojxwu.jpg'
     )
     image_11 = Image(
-        title = 'Autumn is here', user_id=3, description='Who else loves this time of year.', image_url='https://www.pixel4k.com/wp-content/uploads/2022/08/autumn-photography-4k_1660849791-2048x1365.jpg'
+        title = 'Autumn is here', user_id=3, description='Who else loves this time of year.', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669935933/Photo-genius/autumn-photography-4k_1660849791-2048x1365_hgxnpi.jpg'
     )
     image_12 = Image(
-        title = 'Jolly times', user_id=4, description='It\'s the most wonderful time...', image_url='https://www.pixel4k.com/wp-content/uploads/2021/09/fireworks-celebrations-4k_1630612242-2048x1365.jpg'
+        title = 'Jolly times', user_id=4, description='It\'s the most wonderful time...', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669935962/Photo-genius/fireworks-celebrations-4k_1630612242-2048x1365_wiplvl.jpg'
     )
     image_13 = Image(
-        title = 'SWE Favorite Bridge', user_id=5, description='I heard SWE love this bridge.', image_url='https://www.pixel4k.com/wp-content/uploads/2019/09/san-francisco-bay-bridge_1569187782.jpg'
+        title = 'SWE Favorite Bridge', user_id=5, description='I heard SWE love this bridge.', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669935991/Photo-genius/san-francisco-bay-bridge_1569187782_cptfpj.jpg'
     )
     image_14 = Image(
-        title = 'Paris', user_id=6, description='Took this while skydiving over Paris.', image_url='https://www.pixel4k.com/wp-content/uploads/2018/10/eiffel-tower-france-city-at-night-4k_1540756881.jpg'
+        title = 'Paris', user_id=6, description='Took this while skydiving over Paris.', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669936022/Photo-genius/eiffel-tower-france-city-at-night-4k_1540756881_mgyjze.jpg'
     )
     image_15 = Image(
-        title = 'Pink Sunset', user_id=7, description='What a color pallette', image_url='https://www.pixel4k.com/wp-content/uploads/2018/09/dawn-city-panorama-4k_1538066745.jpg'
+        title = 'Pink Sunset', user_id=7, description='What a color pallette', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669936055/Photo-genius/dawn-city-panorama-4k_1538066745_aal0ks.jpg'
     )
     image_16 = Image(
-        title = '2022 Qatar', user_id=8, description='The World Cup is being held here this year!', image_url='https://www.pixel4k.com/wp-content/uploads/2018/03/Doha%20Qatar%20Skyline710439032.jpg'
+        title = '2022 Qatar', user_id=8, description='The World Cup is being held here this year!', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669936087/Photo-genius/Doha_Qatar_Skyline710439032_otqcmm.jpg'
     )
     image_17 = Image(
-        title = 'Golden Child', user_id=1, description='This cat will rule the world', image_url='https://www.pixel4k.com/wp-content/uploads/2021/03/cat-golden-eyes-lying-down-4k_1615884681-2048x1365.jpg'
+        title = 'Golden Child', user_id=1, description='This cat will rule the world', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669936112/Photo-genius/cat-golden-eyes-lying-down-4k_1615884681-2048x1365_vhtppz.jpg'
     )
     image_18 = Image(
-        title = 'FAANG-Mobile', user_id=2, description='This car was handed to me as a signing bonus with a FAANG corporation', image_url='https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg'
+        title = 'FAANG-Mobile', user_id=2, description='This car was handed to me as a signing bonus with a FAANG corporation', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669936209/Photo-genius/bmw-i8-white-side-view-wallpaper-preview_g7xdaz.jpg'
     )
     image_19 = Image(
-        title = 'Santorini, Greece', user_id=3, description='This place is lowkey overrated for tourists, beautiful if you live here though', image_url='https://images.pexels.com/photos/1518500/pexels-photo-1518500.jpeg'
+        title = 'Santorini, Greece', user_id=3, description='This place is lowkey overrated for tourists, beautiful if you live here though', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669936610/Photo-genius/pexels-photo-1518500_szzsfa.jpg'
     )
     image_20 = Image(
-        title = 'Andromeda', user_id=4, description='If you look very closely you can see back in time', image_url='https://images.pexels.com/photos/2670898/pexels-photo-2670898.jpeg'
+        title = 'Andromeda', user_id=4, description='If you look very closely you can see back in time', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669937453/Photo-genius/Andromeda_tj1fwp.jpg'
     )
     image_21 = Image(
-        title = 'Night Sky', user_id=5, description='Wow doesn\'t get much better than this', image_url='https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg'
+        title = 'Lightning Strikes!', user_id=3, description='Wow still can\'t beleive I took this photo while attending App Academy', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669937466/Photo-genius/Lightning_zgvv50.jpg'
     )
     image_22 = Image(
-        title = 'Amazon', user_id=6, description='Might\'ve unlocked my third eye when I was here not sure yet.', image_url='https://images.pexels.com/photos/3222686/pexels-photo-3222686.jpeg'
+        title = 'Cruise Ship', user_id=5, description='If you look very closely you can see me on the cruise ship', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669937469/Photo-genius/cruise_zn2beb.jpg'
     )
     image_23 = Image(
-        title = 'Colorful Sky', user_id=7, description='If you don\'t love this picture then we might have some problems', image_url='https://images.pexels.com/photos/3227984/pexels-photo-3227984.jpeg'
+        title = 'Butterfly', user_id=7, description='Got him right out of the coccoon', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669937732/Photo-genius/butterfly-4089197_960_720_2_cysxme.jpg'
     )
     image_24 = Image(
-        title = 'Telescope Image', user_id=8, description='First time using a telescope did I do good?', image_url='https://images.pexels.com/photos/816608/pexels-photo-816608.jpeg'
+        title = 'Cologne Cathedral', user_id=8, description='Cologne Cathedral in Germany', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669937698/Photo-genius/cologne-cathedral-in-gemany-4k_1546277758_qabvms.jpg'
     )
     image_25 = Image(
-        title = 'Northern Lights', user_id=1, description='Looks just like a hurricane forming in the sky!', image_url='https://images.pexels.com/photos/1938348/pexels-photo-1938348.jpeg'
+        title = 'Pagoda', user_id=1, description='Pagoda roof during night time', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669937674/Photo-genius/pagoda-roof-building-night-lighting-4k_1538066616_lnywum.jpg'
     )
     image_26 = Image(
-        title = 'New Airbnb', user_id=2, description='Check out this Airbnb I found, apparently you can stay here for free!', image_url='https://images.pexels.com/photos/2437299/pexels-photo-2437299.jpeg'
+        title = 'Night City Sunset', user_id=2, description='Night City Sunset Skyscrapers Beach', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669937636/Photo-genius/night-city-sunset-skyscrapers-beach-4k_1538066946_aghzjb.jpg'
     )
     image_27 = Image(
-        title = 'Lightning Strikes!', user_id=3, description='Wow still can\'t beleive I took this photo while attending App Academy', image_url='https://images.pexels.com/photos/2684011/pexels-photo-2684011.jpeg'
-    )
-    image_28 = Image(
-        title = 'Night Life', user_id=4, description='Beautiful city signs, love the night life', image_url='https://images.pexels.com/photos/3678857/pexels-photo-3678857.jpeg'
-    )
-    image_29 = Image(
-        title = 'Cruise Ship', user_id=5, description='If you look very closely you can see me on the cruise ship', image_url='https://images.pexels.com/photos/2725479/pexels-photo-2725479.jpeg'
-    )
-    image_30 = Image(
-        title = 'Milky Way', user_id=6, description='Took this image on Elon Musk\'s space shuttle to Mars!', image_url='https://images.pexels.com/photos/821644/pexels-photo-821644.jpeg'
-    )
-    image_31 = Image(
-        title = 'Butterfly', user_id=7, description='Got him right out of the coccoon', image_url='https://cdn.pixabay.com/photo/2019/03/29/13/18/butterfly-4089197_960_720.jpg'
-    )
-    image_32 = Image(
-        title = 'Cologne Cathedral', user_id=8, description='Cologne Cathedral in Germany', image_url='https://www.pixel4k.com/wp-content/uploads/2018/12/cologne-cathedral-in-gemany-4k_1546277758.jpg'
-    )
-    image_33 = Image(
-        title = 'Pagoda', user_id=1, description='Pagoda roof during night time', image_url='https://www.pixel4k.com/wp-content/uploads/2018/09/pagoda-roof-building-night-lighting-4k_1538066616.jpg'
-    )
-    image_34 = Image(
-        title = 'Night City Sunset', user_id=2, description='Night City Sunset Skyscrapers Beach', image_url='https://www.pixel4k.com/wp-content/uploads/2018/09/night-city-sunset-skyscrapers-beach-4k_1538066946.jpg'
-    )
-    image_35 = Image(
-        title = 'Long Exposure Road', user_id=3, description='Being creative can be hard, naming things is also difficult as far as seed data is concerned', image_url='https://www.pixel4k.com/wp-content/uploads/2018/09/night-city-road-clouds-overcast-4k_1538067239.jpg'
+        title = 'Long Exposure Road', user_id=3, description='Being creative can be hard, naming things is also difficult as far as seed data is concerned', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669937589/Photo-genius/night-city-road-clouds-overcast-4k_1538067239_um7dps.jpg'
     )
 
 
@@ -136,14 +112,6 @@ def seed_images():
     db.session.add(image_25)
     db.session.add(image_26)
     db.session.add(image_27)
-    db.session.add(image_28)
-    db.session.add(image_29)
-    db.session.add(image_30)
-    db.session.add(image_31)
-    db.session.add(image_32)
-    db.session.add(image_33)
-    db.session.add(image_34)
-    db.session.add(image_35)
     db.session.commit()
 
 
