@@ -27,19 +27,19 @@ const CreateComment = () => {
             return
         }
         console.log("this is comments in component", comment)
-        dispatch(createComment(comment)).then(() => setDescription("")).then(() => dispatch(getComment()))
+        dispatch(createComment(comment)).then(() => setDescription("")).then(() => setErrors([])).then(() => dispatch(getComment()))
 
     }
 
         return (
             <div className="create-comment-wrapper">
-                {errors.map((error) => (
-                    <div className="create-comment-error-map">{error}</div>
-                ))}
                 <form className="create-comment">
                     <textarea className="comment-description" value={description}
                                 onChange={(e) => setDescription(e.target.value)}/>
                     <div className="create-comment-button-wrap">
+                                {errors.map((error) => (
+                                    <div className="create-comment-error-map">{error}</div>
+                                ))}
                     <button className="create-submit" onClick={handleSubmit} >Leave a Comment</button>
                     </div>
 

@@ -1,6 +1,6 @@
 .create-comment-wrapper {
     display: flex;
-    width: 482px;
+    width: 522px;
     height: 97px;
     margin-top: 15px;
     margin-bottom: 100px;
@@ -11,17 +11,20 @@
 .create-comment-error-map{
     color: red;
     font-size: 14px;
+    position: relative;
+    right: 18px;
+
 
 }
 .create-comment{
-    width: 421px;
+    width: 491px;
     position: relative;
     margin-left: 19px;
 }
 
 .comment-description {
     font-size: 14px;
-    width: 421px;
+    width: 491px;
     height: 92px;
     box-sizing: border-box;
 }
@@ -35,10 +38,13 @@
 .create-submit {
     padding: 6.5px 20px;
     font-size: 16px;
-    height: 32px;
+    height: 45px;
     color: white;
     background: linear-gradient(90deg, rgba(98,0,255,1) 0%, rgba(255,0,0,1) 100%);
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    position: relative;
+    left: 0px;
+    /* margin-left: 5px; */
 }
