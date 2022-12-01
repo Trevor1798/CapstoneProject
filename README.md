@@ -24,7 +24,7 @@
  - [<img src='https://img.shields.io/badge/-postgres-lightgrey' target='_blank'/>](https://www.postgresql.org/)
  - [<img src='https://img.shields.io/badge/-render-purple' target='_blank'/>](https://render.com/)
 
- #Getting Started
+ # Getting Started
  
  Directions to run on your local machine:
  
