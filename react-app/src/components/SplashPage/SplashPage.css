@@ -33,6 +33,7 @@ cursor: pointer;
 }
 .photo-genius-logo1 {
 color: rgb(98, 0, 255);
+/* color: purple */
 font-size: 40px;
 border-radius: 50%;
 margin-left: 5px;
@@ -66,7 +67,8 @@ img{
     margin-right: 100px;
     display: flex;
     align-items: center;
-    color: white
+    color: white;
+    font-size: 22px;
 }
 
 .splash-login {
@@ -155,10 +157,10 @@ bottom: 10px;
 }
 
 .start-for-free {
-background-color: white;
-color: black;
+    background: linear-gradient(90deg, rgba(98,0,255,1) 0%, rgba(255,0,0,1) 100%);
+color: rgb(255, 255, 255);
 cursor: pointer;
-font-size: 25px;
+font-size: 30px;
 height: 60px;
 line-height: 64px;
 max-width: 200px;
@@ -168,6 +170,7 @@ margin-left: auto;
 margin-right: auto;
 display: flex;
 justify-content: center;
+align-items: center;
 margin-top: 50px;
 
 }

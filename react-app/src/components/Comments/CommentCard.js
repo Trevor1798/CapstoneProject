@@ -30,6 +30,7 @@ const CommentCard = ({comment}) => {
 
     const [description, setDescription ] = useState(comment?.description)
     const [canEdit, setCanEdit] = useState(false)
+    const [errors, setErrors] = useState([])
 
 
 
@@ -41,52 +42,66 @@ const CommentCard = ({comment}) => {
             user_id: user.id,
             image_id: imageId
         }
+        let errors=[]
+        if (description.length < 3 || description.length > 255) {
+            errors.push('Comment must be between 3 and 255 characters')
+            setErrors(errors)
+            return
+
+        }
+        setErrors(errors)
         dispatch(updateComment(params, comment?.id)).then(() => setCanEdit(false))
     }
     return (
-        <div className="comment-wrapper">
-            <img className="user-comments" src='https://freesvg.org/img/abstract-user-flat-4.png'></img>
-            <div className="comments-user">
+        <div className="comment-card-wrapper">
+            <img className="comment-card-pic" src='https://freesvg.org/img/abstract-user-flat-4.png'></img>
+            <div className="comment-card-container">
+
+            <div className="comment-card-inner-container">
+
+            <div className="comment-card-name">
                 {commentOwner?.first_name}{' '}{commentOwner?.last_name}
             </div>
-            <div className="edit-comments">
                 {commentOwner?.id === user?.id && (
-                    <div className='edit-comments'>
+                    <div className="comment-card-edit-delete-container">
+
                         {!canEdit ?
                         <>
-                        <div className="edit-comment" onClick={() => setCanEdit(true)}>Edit your comment</div>
-                        <div className="delete-comment" onClick={() => dispatch(deleteComment(comment?.id))}>Delete Comment</div>
+                        <i className="edit-comment fa-solid fa-square-pen" onClick={() => setCanEdit(true)}></i>
+                        <i className="delete-comment fa-sharp fa-solid fa-trash" onClick={() => dispatch(deleteComment(comment?.id))}></i>
                         </>
                         :
                         <>
-                        <div className="delete-comment-false" onClick={() => setCanEdit(false)}></div>
-                        <div className="edit-comment-false" onClick={() => dispatch(deleteComment(comment?.id))}></div>
+                        <div className="edit-comment" onClick={() => setCanEdit(false)}></div>
+                        <div className="delete-comment" onClick={() => dispatch(deleteComment(comment?.id))}></div>
                         </>
                         }
-                        </div>
+                </div>
                 )}
             </div>
 
-        <div className="edit-comment-wrapper">
-
-            <div className="errors">
-
-            </div>
-            <div className="edit-commentsss">
                 {canEdit ?
-                <div>
-                <form className='edit-comment-form'>
-                    <textarea className="edit-description" type='text' value={description}
-                                onChange={(e) => setDescription(e.target.value)}/>
-                    <button className='submit-edit' onClick={handleClick}>Comment</button>
-                </form>
-            </div>
-            :
-            <div className="comment-description">{comment?.description}</div>
 
-        }
+                <form className='edit-comment-form'>
+
+
+                    <textarea className="comment-card-edit-description" type='text' value={description}
+                                onChange={(e) => setDescription(e.target.value)}/>
+                    <div className="edit-comment-button-container">
+                        <div className="error-map-comment-card">
+                                {errors.map((error) => (
+                                    <div className="comment-error">{error}</div>
+                                ))}
+                    </div>
+                    <button className='comment-card-button' onClick={handleClick}>Comment</button>
+                    </div>
+                </form>
+                :
+                <div>
+                <div className="comment-card-description">{comment?.description}</div>
+                </div>
+            }
         </div>
-    </div>
     </div>
     )
 }

@@ -1,72 +1,90 @@
-.edit-comments{
-font-size: 13px;
-color: rgb(69, 132, 214);
-/* position: absolute; */
-position: relative;
-left: 100px;
-bottom: 23px;
-cursor: pointer;
-font-weight: bolder;
+.comment-card-wrapper {
+    display: flex;
+    width: 482px;
+    margin-top: 5px;
+    padding: 5px 0 5px;
+    box-sizing: border-box
 }
-.delete-comment{
-    font-size: 13px;
-    position: relative;
-    left: 120px;
-    bottom: 14.8px;
+
+.comment-card-pic {
+    height: 32px;
+    width: 32px;
+    margin-left: 10px;
+    cursor: pointer
+}
+
+.comment-card-container {
+    padding-left: 20px;
+    width: 440px;
+    box-sizing: border-box
+
+}
+
+.comment-card-inner-container {
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+
+}
+
+.comment-card-name {
+    color: #006dac;
+    cursor: pointer
+
+}
+
+.comment-card-edit-delete-container {
+    margin-left: 12px;
     cursor: pointer;
 }
-.comment-wrapper {
-    /* border: 2px solid purple; */
 
+.delete-comment {
+border: none;
+margin-left: 5px;
+
+}
+
+.comment-card-edit-description {
+    font-size: 14px;
+    width: 421px;
+    height: 92px;
     box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-    position: relative;
-    left: 40px;
-    top: 40px;
-    max-width: 450px;
-    /* border: 1px solid black; */
-    /* display: flex; */
-    /* justify-content: flex-start; */
-
-}
-.comment-wrapper:hover{
 
 }
 
-.user-comments {
-    height: 35px;
-    width: 35px;
+.edit-comment-button-container {
+    display: flex;
+    justify-content: flex-end;
 }
-.comments-user {
-    position: relative;
-    left: 50px;
-    bottom: 30px;
-    color: rgb(73, 128, 165);
+.comment-card-button {
+    padding: 6.5px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    height: 32px;
+    color: white;
+    background: linear-gradient(90deg, rgba(98,0,255,1) 0%, rgba(255,0,0,1) 100%);
+    border:none;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
-.comment-description {
-    /* position: relative; */
-    left: 15px;
-    bottom: 15px;
+.comment-card-description{
+    font-size:14px;
     word-wrap: break-word;
-    white-space: pre-wrap;
-    word-break: break-word;
-    margin-bottom: 8px;
 }
+.comment-error{
+    color: red;
+    font-size: 14px;
+    margin-left: 3px;
+    /* position: relative;
+    bottom: 10px; */
+    /* top: 0; */
 
-.edit-description {
-    /* width: 400px; */
-    position: relative;
-    height: 40px;
-    margin-left: auto;
-    margin-right: 5px;
-    overflow: hidden;
-word-wrap: break-word;
-white-space: pre-wrap;
-word-break: break-word;
 }
-.views-faves-comments-wrap{
-    position: relative;
-    left: 100px;
+.error-map-comment-card{
+    margin-left: 3px;
+    /* width: 30px; */
+    /* position: absolute; */
+    /* right: 30px */
 }
