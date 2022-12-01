@@ -104,6 +104,6 @@ npm start
 ![deployedComments](https://user-images.githubusercontent.com/102115797/204971946-1b31a8d6-9412-470a-bf74-00f89116b44f.PNG)
 
 
-# Contact 
-- Trevor Jones [<img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' target='_blank' alt='Github Logo' width=30px height=27px/>](https://github.com/Trevor1798)
+# Contact - Trevor Jones (devTrev) 
+- [<img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' target='_blank' alt='Github Logo' width=30px height=27px/>](https://github.com/Trevor1798)
 - [<img src='https://brand.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg' target='_blank' alt='LinkedIn Logo' width=30px height=30px/>](https://www.linkedin.com/in/trevor-jones-458b75202/)
