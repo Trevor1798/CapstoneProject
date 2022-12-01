@@ -17,7 +17,7 @@ Hello all future participants!
 -[WireFrames](https://github.com/Trevor1798/CapstoneProject/wiki/Photo-Genius-Wireframe)
 
 # Tech Stack:
--[<img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/flask/flask-original-wordmark.svg' alt="Flask Logo" target="_blank'/>(https://raw.githubusercontent.com/devicons/devicon/master/icons/flask/flask-original-wordmark.svg)
+-[<img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/flask/flask-original-wordmark.svg' alt="Flask Logo" target="_blank'/>](https://raw.githubusercontent.com/devicons/devicon/master/icons/flask/flask-original-wordmark.svg)
 
 2. Install dependencies
 
