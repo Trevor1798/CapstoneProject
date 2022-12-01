@@ -79,7 +79,8 @@ const EditImage = () => {
             <div className='form-wrapper'>
                 <div className='image-url'>
                 <input className='image-url-input' type='text' placeholder='Image URL' value={image_url}
-                        required onChange={(e) => setImageUrl(e.target.value)}/>
+                        required onChange={(e) => setImageUrl(e.target.value)} onError={e => e.currentTarget.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png"}
+                        />
                 </div>
             <div className='image-title'>
                 <input className='title-input' type='text' placeholder='Title' value={title}

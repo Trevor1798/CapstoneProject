@@ -5,10 +5,13 @@
 /* position: absolute; */
 display: flex;
 align-self: center;
-color: rgb(228, 228, 228);
+background: linear-gradient(90deg, rgba(98,0,255,1) 0%, rgba(255,0,0,1) 100%);
 font-size: 30px;
 font-weight: 999;
 margin-left: 5px;
+border-radius: 5px;
+
+/* width: 180px; */
 }
 .splash-top-left{
     margin-left: 20px;
@@ -24,6 +27,8 @@ cursor: pointer;
     color: rgb(98, 0, 255);
 font-size: 40px;
 border-radius: 50%;
+position: relative;
+left: 8px;
 
 }
 .photo-genius-logo2 {
@@ -81,4 +86,5 @@ margin-right: 30px;
     position: relative;
     top: 2.2px;
     left:30px
+    
 }

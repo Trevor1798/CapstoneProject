@@ -74,7 +74,8 @@ const CreateImage = () => {
                 <div className='form-wrapper'>
                     <div className='image-url'>
                     <input className='image-url-input' type='text' placeholder='Image URL'
-                            required minlength={3}  onChange={(e) => setImageUrl(e.target.value)}/>
+                            required minlength={3}  onChange={(e) => setImageUrl(e.target.value)} onError={e => e.currentTarget.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png"}
+                        />
                     </div>
                     <div className='image-title'>
                         <input className='title-input' type='text' placeholder='Title'
