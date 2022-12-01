@@ -1,8 +1,11 @@
+import { useEffect } from 'react'
 import {useSelector} from 'react-redux'
 import {NavLink, Redirect, useHistory} from 'react-router-dom'
 import "./SplashPage.css"
-
+import { useDispatch } from 'react-redux'
+import {getImage} from '../../store/image'
 const SplashPage = () => {
+    let dispatch = useDispatch()
     let history = useHistory()
     const user = useSelector(state => state.session.user)
     const githubLink ='https://github.com/Trevor1798/CapstoneProject/wiki'
@@ -16,7 +19,9 @@ const SplashPage = () => {
         e.preventDefault()
         return <NavLink to={linkedinLink}/>
     }
-
+    useEffect(() => {
+        dispatch(getImage)
+    },[])
     return (
         <div className='splashpage-wrapper'>
 

@@ -19,19 +19,44 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password, first_name, last_name));
+      const data = await dispatch(signUp(username, email, password, first_name, last_name)).then(() => history.push('/explore'));
       if (data) {
         setErrors(data)
+
       }
-      let errors = []
-      if (username.length < 4 || username.length > 50) errors.push('User name must be between 4 and 50 characters')
-      if (first_name.length < 3 || first_name.length > 50) errors.push('First name must be between 3 and 50 characters')
-      if (last_name.length < 3 || last_name.length > 50) errors.push('Last name must be between 3 and 50 characters')
-      if (email.length < 4 || email.length > 100) errors.push("Email must be between 4 and 100 characters")
-      if (password.length < 6 || password.length > 50) errors.push('Password must be between 6 and 50 characters')
-      setErrors(errors)
-      if (password !== repeatPassword) setErrors('Passwords do not match ')
-    }
+    let errors = []
+    if (username.length < 4 || username.length > 50) {
+      errors.push('User name must be between 4 and 50 characters')
+        setErrors(errors)
+        return
+
+      }
+      if (first_name.length < 3 || first_name.length > 50){
+        errors.push('First name must be between 3 and 50 characters')
+        setErrors(errors)
+        return
+
+      }
+      if (last_name.length < 3 || last_name.length > 50) {
+        errors.push('Last name must be between 3 and 50 characters')
+        setErrors(errors)
+        return
+
+      }
+      if (email.length < 4 || email.length > 100) {
+        errors.push("Email must be between 4 and 100 characters")
+        setErrors(errors)
+        return
+
+      }
+      if (password.length < 6 || password.length > 50) {
+        errors.push('Password must be between 6 and 50 characters')
+        setErrors(errors)
+        return
+
+      }
+      }
+      if (password !== repeatPassword) setErrors(['Passwords do not match'])
   };
 
   // useEffect(() => {
@@ -89,6 +114,8 @@ const SignUpForm = () => {
           onChange={updateUsername}
           value={username}
           placeholder='Username'
+          // minlength={4}
+          required
           ></input>
       </div>
       <div className='first-name'>
@@ -98,6 +125,8 @@ const SignUpForm = () => {
           onChange={updateFirstName}
           value={first_name}
           placeholder='First name'
+          required
+          // minlength={3}
           ></input>
           </div>
 
@@ -108,6 +137,8 @@ const SignUpForm = () => {
           onChange={updateLastName}
           value={last_name}
           placeholder='Last name'
+          required
+          // minlength={3}
           ></input>
         </div>
         <div className='email'>
@@ -117,6 +148,8 @@ const SignUpForm = () => {
           onChange={updateEmail}
           value={email}
           placeholder='Email'
+          required
+          // minlength={4}
           ></input>
           </div>
       <div className='password'>
@@ -126,6 +159,8 @@ const SignUpForm = () => {
           onChange={updatePassword}
           value={password}
           placeholder='Password'
+          required
+          minlength={6}
           ></input>
       </div>
       <div className='-repeat-password'>
@@ -137,6 +172,7 @@ const SignUpForm = () => {
           value={repeatPassword}
           placeholder='Confirm Password'
           required={true}
+          minlength={6}
           ></input>
       </div>
       <div className='below-signup'>

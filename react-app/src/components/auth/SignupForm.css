@@ -163,7 +163,7 @@ body, html {
 .errors-map {
 
     position: relative;
-    left: 42px;
+    left: 52px;
     top: 6px;
     color: red;
 }
@@ -173,4 +173,10 @@ body, html {
     color:#128FDC;
     text-decoration: underline;
     cursor: pointer;
+}
+
+.errors {
+
+    position: relative;
+    left: 11px
 }
