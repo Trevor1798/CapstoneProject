@@ -14,7 +14,7 @@ const LoginForm = () => {
 
   const onLogin = async (e) => {
     e.preventDefault();
-    const data = await dispatch(login(email, password));
+    const data = await dispatch(login(email, password)).then(() => history.push('/explore'));
     if (data) {
       setErrors(["Please provide valid credentials"]);
     }
@@ -29,7 +29,7 @@ const LoginForm = () => {
   };
   const demoUserClick = (e) => {
     e.preventDefault()
-    dispatch(login("demo@aa.io", "password"))
+    dispatch(login("demo@aa.io", "password")).then(() => history.push('/explore'))
   }
 
   if (user) {
