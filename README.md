@@ -17,146 +17,80 @@ Hello all future participants!
 -[WireFrames](https://github.com/Trevor1798/CapstoneProject/wiki/Photo-Genius-Wireframe)
 
 # Tech Stack:
--[<img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/flask/flask-original-wordmark.svg' alt="Flask Logo" target="_blank'/>](https://raw.githubusercontent.com/devicons/devicon/master/icons/flask/flask-original-wordmark.svg)
+ - [<img src='https://img.shields.io/badge/-flask-yellow' alt='Javascript Logo'  target='_blank'/>](https://flask.palletsprojects.com/en/2.2.x/)
+ - [<img src='https://img.shields.io/badge/-React-blue' alt='React Logo' target='_blank'/>](https://reactjs.org/)
+ - [<img src='https://img.shields.io/badge/-HTML5-orange' alt='HTML Logo' target='_blank'/>](https://html.com/)
+ - [<img src='https://img.shields.io/badge/-CSS-blue' target='_blank'/>](https://www.w3.org/Style/CSS/Overview.en.html)
+ - [<img src='https://img.shields.io/badge/-postgres-lightgrey' target='_blank'/>](https://www.postgresql.org/)
+ - [<img src='https://img.shields.io/badge/-render-purple' target='_blank'/>](https://render.com/)
 
-2. Install dependencies
-
-      ```bash
-      pipenv install -r requirements.txt
-      ```
-
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-
-4. Make sure the SQLite3 database connection URL is in the **.env** file
-
-5. This starter organizes all tables inside the `flask_schema` schema, defined
-   by the `SCHEMA` environment variable.  Replace the value for
-   `SCHEMA` with a unique name, **making sure you use the snake_case
-   convention**.
-
-6. Get into your pipenv, migrate your database, seed your database, and run your Flask app
-
-   ```bash
-   pipenv shell
-   ```
-
-   ```bash
-   flask db upgrade
-   ```
-
-   ```bash
-   flask seed all
-   ```
-
-   ```bash
-   flask run
-   ```
-
-7. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
-
-
-## Deployment through Render.com
-
-First, refer to your Render.com deployment articles for more detailed
-instructions about getting started with [Render.com], creating a production
-database, and deployment debugging tips.
-
-From the [Dashboard], click on the "New +" button in the navigation bar, and
-click on "Web Service" to create the application that will be deployed.
-
-Look for the name of the application you want to deploy, and click the "Connect"
-button to the right of the name.
-
-Now, fill out the form to configure the build and start commands, as well as add
-the environment variables to properly deploy the application.
-
-### Part A: Configure the Start and Build Commands
-
-Start by giving your application a name.
-
-Leave the root directory field blank. By default, Render will run commands from
-the root directory.
-
-Make sure the Environment field is set set to "Python 3", the Region is set to
-the location closest to you, and the Branch is set to "main".
-
-Next, add your Build command. This is a script that should include everything
-that needs to happen _before_ starting the server.
-
-For your Flask project, enter the following command into the Build field, all in
-one line:
-
-```shell
-# build command - enter all in one line
-npm install --prefix react-app &&
-npm run build --prefix react-app &&
-pip install -r requirements.txt &&
-pip install psycopg2 &&
-flask db upgrade &&
+ #Getting Started
+ 
+ Directions to run on your local machine:
+ 
+ 1. Clone the repo
+ - SSH Version:
+ ``` 
+ git@github.com:Trevor1798/CapstoneProject.git
+ ```
+ or
+ -HTTPS Version:
+ ```
+ git clone https://github.com/nwinzig/YSTE.git](https://github.com/Trevor1798/CapstoneProject.git)
+ ```
+ 2. Install Packages:
+ ```
+ pipenv install
+cd react-app
+npm install
+ ```
+ 3. Create a .env file and set the environment variables for SECRET_KEY and DATABASE_URL to your choosing.
+ 4. Migrate and seed the files.
+ ```
+ flask run db init
+flask run migrate
 flask seed all
-```
+ ```
+ 5. Run the server and start the react app
+ ```
+ pipenv run flask run
+cd react-app
+npm start
+ ```
+ 
+# Usage
+## Splash Page
 
-This script will install dependencies for the frontend, and run the build
-command in the __package.json__ file for the frontend, which builds the React
-application. Then, it will install the dependencies needed for the Python
-backend, and run the migration and seed files.
+- From the home page you can start your journey by Logging in or Signing up.
+![deployedSplash](https://user-images.githubusercontent.com/102115797/204970982-6863bfe2-be7c-44b1-9980-4a9857ecd96c.PNG)
 
-Now, add your start command in the Start field:
 
-```shell
-# start script
-gunicorn app:app
-```
+## Sign Up
+- Here you can become an official user of the site! 
+![deployedSignUp](https://user-images.githubusercontent.com/102115797/204971681-e553b0b0-e2dc-4236-9b19-32d93f81eacb.PNG)
 
-_If you are using websockets, use the following start command instead for increased performance:_
 
-`gunicorn --worker-class eventlet -w 1 app:app`
+## Log in
+-After you become a member of Photo-genius you can login here!
+![deployedLogin](https://user-images.githubusercontent.com/102115797/204971732-29d9dd06-8a77-4cf5-8adb-c569b27ee853.PNG)
 
-### Part B: Add the Environment Variables
 
-Click on the "Advanced" button at the bottom of the form to configure the
-environment variables your application needs to access to run properly. In the
-development environment, you have been securing these variables in the __.env__
-file, which has been removed from source control. In this step, you will need to
-input the keys and values for the environment variables you need for production
-into the Render GUI.
+## Explore Page
+- Here you can view all current images Photo-genius has to offer!
+![deployedExplore](https://user-images.githubusercontent.com/102115797/204971123-9ee04d27-098f-4434-a7f9-98b3907b077a.PNG)
 
-Click on "Add Environment Variable" to start adding all of the variables you
-need for the production environment.
 
-Add the following keys and values in the Render GUI form:
+## Upload Image
+- Here Each authenticated and logged in users can add their favorite images to the site.
+![deployedCreateImage](https://user-images.githubusercontent.com/102115797/204971267-13010450-0c49-4e24-a446-59855312c08d.PNG)
 
-- SECRET_KEY (click "Generate" to generate a secure secret for production)
-- FLASK_ENV production
-- FLASK_APP app
-- SCHEMA (your unique schema name, in snake_case)
-- REACT_APP_BASE_URL (use render.com url, located at top of page, similar to
-  https://this-application-name.onrender.com)
 
-In a new tab, navigate to your dashboard and click on your Postgres database
-instance.
+## Image Details
+- Here users can look at each individual image to get further details on that image, if the user is authorized and logged in then they can leave comments and interact with the image as well!
+![deployedImageDetail](https://user-images.githubusercontent.com/102115797/204971929-023fa6f7-0964-4065-b5f7-a7a439176a8b.PNG)
 
-Add the following keys and values:
+![deployedComments](https://user-images.githubusercontent.com/102115797/204971946-1b31a8d6-9412-470a-bf74-00f89116b44f.PNG)
 
-- DATABASE_URL (copy value from Internal Database URL field)
 
-_Note: Add any other keys and values that may be present in your local __.env__
-file. As you work to further develop your project, you may need to add more
-environment variables to your local __.env__ file. Make sure you add these
-environment variables to the Render GUI as well for the next deployment._
-
-Next, choose "Yes" for the Auto-Deploy field. This will re-deploy your
-application every time you push to main.
-
-Now, you are finally ready to deploy! Click "Create Web Service" to deploy your
-project. The deployment process will likely take about 10-15 minutes if
-everything works as expected. You can monitor the logs to see your build and
-start commands being executed, and see any errors in the build process.
-
-When deployment is complete, open your deployed site and check to see if you
-successfully deployed your Flask application to Render! You can find the URL for
-your site just below the name of the Web Service at the top of the page.
-
-[Render.com]: https://render.com/
-[Dashboard]: https://dashboard.render.com/
+# Contact 
+- Trevor Jones [<img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' target='_blank' alt='Github Logo' width=30px height=27px/>](https://github.com/Trevor1798)[<img src='https://brand.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg' target='_blank' alt='LinkedIn Logo' width=30px height=30px/>](https://www.linkedin.com/in/trevor-jones-458b75202/)
