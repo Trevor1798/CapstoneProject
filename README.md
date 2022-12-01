@@ -1,6 +1,6 @@
-# Photo-Genius: A Flickr Clone
+# Photo-Genius: A Flickr Clone 📷
 
-Hello all future participants!
+Hello all future participants! 👋
 
 # About Photo-Genius:
 
@@ -62,31 +62,43 @@ npm start
 ## Splash Page
 
 - From the home page you can start your journey by Logging in or Signing up.
+
+
 ![deployedSplash](https://user-images.githubusercontent.com/102115797/204970982-6863bfe2-be7c-44b1-9980-4a9857ecd96c.PNG)
 
 
 ## Sign Up
 - Here you can become an official user of the site! 
+
+
 ![deployedSignUp](https://user-images.githubusercontent.com/102115797/204971681-e553b0b0-e2dc-4236-9b19-32d93f81eacb.PNG)
 
 
 ## Log in
 -After you become a member of Photo-genius you can login here!
+
+
 ![deployedLogin](https://user-images.githubusercontent.com/102115797/204971732-29d9dd06-8a77-4cf5-8adb-c569b27ee853.PNG)
 
 
 ## Explore Page
 - Here you can view all current images Photo-genius has to offer!
+
+
 ![deployedExplore](https://user-images.githubusercontent.com/102115797/204971123-9ee04d27-098f-4434-a7f9-98b3907b077a.PNG)
 
 
 ## Upload Image
 - Here Each authenticated and logged in users can add their favorite images to the site.
+
+
 ![deployedCreateImage](https://user-images.githubusercontent.com/102115797/204971267-13010450-0c49-4e24-a446-59855312c08d.PNG)
 
 
 ## Image Details
-- Here users can look at each individual image to get further details on that image, if the user is authorized and logged in then they can leave comments and interact with the image as well!
+- Here users can look at each individual image to get further details on that image, if the user is authorized and logged in then they can leave/edit/delete their own comments to interact with the image as well! Also if the user owns this image then they can proceed to edit the image to their liking or delete the image entirely.
+
+
 ![deployedImageDetail](https://user-images.githubusercontent.com/102115797/204971929-023fa6f7-0964-4065-b5f7-a7a439176a8b.PNG)
 
 ![deployedComments](https://user-images.githubusercontent.com/102115797/204971946-1b31a8d6-9412-470a-bf74-00f89116b44f.PNG)
