@@ -4,18 +4,34 @@ from app.models import db, User, environment, SCHEMA
 # Adds a demo user, you can add other users here if you want
 def seed_users():
     demo = User(
-        first_name='DemoUser', last_name='User', username='Demo', email='demo@aa.io', password='password'
-    )
+        first_name='Demo', last_name='User', username='Demo', email='demo@aa.io', password='password')
     marnie = User(
-        first_name='Marnie', last_name='Jones', username='marnie', email='marnie@aa.io', password='password'
-    )
+        first_name='Marnie', last_name='Jones', username='marnie', email='marnie@aa.io', password='password')
     bobbie = User(
-        first_name='Bobbie', last_name='Ricky,', username='bobbie', email='bobbie@aa.io', password='password'
-    )
+        first_name='Bobbie', last_name='Ricky,', username='bobbie', email='bobbie@aa.io', password='password')
+    kratos = User(
+        username='God_of_war',first_name="Kratos", last_name="God", email='god_of_war@aa.io', password='password')
+    naruto = User(
+        username='Jinchuriki',first_name="Naruto", last_name="Uzumaki", email='jinchuriki@aa.io', password='password')
+    kakashi = User(
+        username='Copy_ninja',first_name="Kakashi", last_name="Hatake", email='copy_ninja@aa.io', password='password')
+    peter = User(
+        username='Family_guy',first_name="Peter", last_name="Griffin", email='family_guy@aa.io', password='password')
+    batman = User(
+        username='Dark_knight',first_name="Bruce", last_name="Wayne", email='dark_knight@aa.io', password='password')
+
+
+
 
     db.session.add(demo)
     db.session.add(marnie)
     db.session.add(bobbie)
+    db.session.add(kratos)
+    db.session.add(naruto)
+    db.session.add(kakashi)
+    db.session.add(peter)
+    db.session.add(batman)
+
 
     db.session.commit()
 
