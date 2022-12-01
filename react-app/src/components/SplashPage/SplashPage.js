@@ -1,10 +1,21 @@
 import {useSelector} from 'react-redux'
-import {useHistory} from 'react-router-dom'
+import {NavLink, Redirect, useHistory} from 'react-router-dom'
 import "./SplashPage.css"
 
 const SplashPage = () => {
     let history = useHistory()
     const user = useSelector(state => state.session.user)
+    const githubLink ='https://github.com/Trevor1798/CapstoneProject/wiki'
+    const linkedinLink ='https://www.linkedin.com/in/trevor-jones-458b75202/'
+
+    const gitHubClick = () => {
+        // e.preventDefault()
+        <NavLink path={githubLink}/>
+    }
+    const linkedinClick = (e) => {
+        e.preventDefault()
+        return <NavLink to={linkedinLink}/>
+    }
 
     return (
         <div className='splashpage-wrapper'>
@@ -21,6 +32,16 @@ const SplashPage = () => {
 
 
                 <div className='logins'>
+                        {user && (
+                    <div className='dev-info'>
+
+                        <div className='meet-the-dev'>Meet the Dev:</div>
+                        <a href='https://github.com/Trevor1798/CapstoneProject/wiki'>
+                        <i className="github fa-brands fa-github"></i></a>
+                        <a href='https://www.linkedin.com/in/trevor-jones-458b75202/'>
+                        <i className="linkedin fa-brands fa-linkedin"></i></a>
+                    </div>
+                )}
                     {!user && (
                 <>
                 <div className='splash-login' onClick={() => history.push('/login')}>Log In</div>
