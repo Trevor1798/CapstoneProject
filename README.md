@@ -1,9 +1,23 @@
-# Flask React Project
+# Photo-Genius: A Flickr Clone
 
-This is the starter for the Flask React project.
+Hello all future participants!
 
-## Getting started
-1. Clone this repository (only this branch)
+# About Photo-Genius:
+ 
+      ## Photo-Genius is a website clone, inspired by Flickr [Flick](https://www.flickr.com/)
+      ## Photo-Genius hosts a wide range of different inspiring photos that hopefully make you say Wow!. Photo-genius also allows you to upload your own images and            share with community. Photo-genius also has comment interactions on all photos to make you more connected to the community! This site is best suited for              those who'd like to view my ideas of beautiful pictures and add their own!
+# Wiki
+## Here's some more info on how the project came together!
+-[MVP Feature List](https://github.com/Trevor1798/CapstoneProject/wiki/MVP-Feature-List)
+
+-[Database Schema](https://github.com/Trevor1798/CapstoneProject/wiki/DB-Schema)
+
+-[User Stories](https://github.com/Trevor1798/CapstoneProject/wiki/User-Stories)
+
+-[WireFrames](https://github.com/Trevor1798/CapstoneProject/wiki/Photo-Genius-Wireframe)
+
+# Tech Stack:
+-[<img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/flask/flask-original-wordmark.svg' alt="Flask Logo" target="_blank'/>(https://raw.githubusercontent.com/devicons/devicon/master/icons/flask/flask-original-wordmark.svg)
 
 2. Install dependencies
 
