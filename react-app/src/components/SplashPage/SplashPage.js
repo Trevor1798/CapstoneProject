@@ -19,9 +19,7 @@ const SplashPage = () => {
         e.preventDefault()
         return <NavLink to={linkedinLink}/>
     }
-    useEffect(() => {
-        dispatch(getImage)
-    },[])
+
     return (
         <div className='splashpage-wrapper'>
 
@@ -41,9 +39,9 @@ const SplashPage = () => {
                     <div className='dev-info'>
 
                         <div className='meet-the-dev'>Meet the Dev:</div>
-                        <a href='https://github.com/Trevor1798/CapstoneProject/wiki'>
+                        <a href='https://github.com/Trevor1798/CapstoneProject/wiki' target='_blank'>
                         <i className="github fa-brands fa-github"></i></a>
-                        <a href='https://www.linkedin.com/in/trevor-jones-458b75202/'>
+                        <a href='https://www.linkedin.com/in/trevor-jones-458b75202/' target='_blank'>
                         <i className="linkedin fa-brands fa-linkedin"></i></a>
                     </div>
                 )}
