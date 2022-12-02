@@ -90,7 +90,7 @@ const LoginForm = () => {
           value={password}
           onChange={updatePassword}
           required
-          minLength={4}
+          minLength={6}
           maxLength={50}
           />
         <button className='login-buttons' type='submit'>Login</button>

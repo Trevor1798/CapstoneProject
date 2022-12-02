@@ -22,7 +22,7 @@ flex-wrap: wrap;
 box-sizing: content-box;
 width: 100%;
 gap: 0 5px;
-flex-grow: 1
+/* flex-grow: 1 */
 }
 
 .explore-images > * {

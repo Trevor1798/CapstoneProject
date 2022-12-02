@@ -19,44 +19,51 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
     let errors = []
-    if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password, first_name, last_name))
-      if (data) {
-        setErrors(data)
-
-      }
     if (username.length < 4 || username.length > 50) {
       errors.push('User name must be between 4 and 50 characters')
-        setErrors(errors)
-        return
+      setErrors(errors)
 
-      }
-      if (first_name.length < 3 || first_name.length > 50){
+
+    }
+    if (first_name.length < 3 || first_name.length > 50){
         errors.push('First name must be between 3 and 50 characters')
         setErrors(errors)
-        return
 
       }
       if (last_name.length < 3 || last_name.length > 50) {
         errors.push('Last name must be between 3 and 50 characters')
         setErrors(errors)
-        return
+
 
       }
       if (email.length < 4 || email.length > 100) {
         errors.push("Email must be between 4 and 100 characters")
         setErrors(errors)
-        return
+
 
       }
       if (password.length < 6 || password.length > 50) {
         errors.push('Password must be between 6 and 50 characters')
         setErrors(errors)
-        return
+
 
       }
+      if (password !== repeatPassword) {
+        errors.push('Passwords do not match')
+        setErrors(errors)
       }
-      if (password !== repeatPassword) setErrors(['Passwords do not match'])
+      if (password === repeatPassword &&
+        username.length >= 4 && username.length <= 50 &&
+        first_name.length >= 3 && first_name.length <= 50 &&
+        last_name.length >= 3 && last_name.length <= 50 &&
+        email.length >= 4 && email.length <= 100 &&
+        password.length >= 6 && password.length <= 50) {
+          const data = await dispatch(signUp(username, email, password, first_name, last_name))
+          if (data) {
+            setErrors(data)
+
+          }
+        }
   };
 
   // useEffect(() => {
