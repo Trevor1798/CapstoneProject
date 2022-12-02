@@ -55,7 +55,7 @@ const SplashPage = () => {
             </div>
 
         <div className='splashpage'>
-            <img className="splashpage-image" src="https://www.pixel4k.com/wp-content/uploads/2021/08/aerial-view-skyline-of-singapore-4k_1629228074-2048x1365.jpg"></img>
+            <img className="splashpage-image" src="https://res.cloudinary.com/dgmw9nv61/image/upload/v1669943764/Photo-genius/aerial-view-skyline-of-singapore-4k_1629228074-2048x1365_z95j7o.jpg"></img>
 
             <div className='text-wrapper'>
             <div className='splash-welcome'>Find your inspiration.</div>

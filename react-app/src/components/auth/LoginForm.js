@@ -39,7 +39,7 @@ const LoginForm = () => {
   return (
     <div className='login-wrapper'>
 
-    <img className='background-image' src='https://live.staticflickr.com/3829/14240294606_8a157ddfc2_b.jpg'></img>
+    <img className='background-image' src='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669943662/Photo-genius/14240294606_8a157ddfc2_b_itdp33.jpg'></img>
     <div className='login-container'>
     <form className='login-form' onSubmit={onLogin}>
       <div className='logo'>

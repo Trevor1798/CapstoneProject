@@ -57,7 +57,7 @@ const CreateImage = () => {
 
     return (
         <div className='create-image-wrapper'>
-            <img className='background-image' src='https://www.pixel4k.com/wp-content/uploads/2018/09/miami-florida-usa-city-ocean-bay-coffee-palm-trees-tables-4k_1538068761.jpg'></img>
+            <img className='background-image' src='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669943697/Photo-genius/miami-florida-usa-city-ocean-bay-coffee-palm-trees-tables-4k_1538068761_ecx6ho.jpg'></img>
                 <div className='image-container'>
 
             <form className='create-image-form' onSubmit={handleSubmit}>
