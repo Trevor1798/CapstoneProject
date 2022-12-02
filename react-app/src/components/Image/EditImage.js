@@ -24,12 +24,7 @@ const EditImage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        let image = {
-            title,
-            description,
-            image_url,
-            user_id: user.id
-        }
+        let errors = []
         if(!image_url.split('?')[0].match(imageCheck)){
             errors.push('Image must be valid: jpg, jpeg, png, webp, avif, gif, svg.')
             setErrors(errors)
@@ -39,6 +34,8 @@ const EditImage = () => {
             errors.push('Image URL must be between 3 and 150 characters')
             setErrors(errors)
             return
+
+
         }
 
         if(description.length < 5 || description.length > 255) {
@@ -46,17 +43,25 @@ const EditImage = () => {
             setErrors(errors)
             return
         }
-        if(title.length < 3 || title.length > 100){
-            errors.push('Title must be between 3 and 100 characters.')
+        if(title.length < 3 || title.length > 50){
+            errors.push('Title must be between 3 and 50 characters.')
             setErrors(errors)
             return
         }
         else {
-        // console.log("edit component images", images)
-        dispatch(editImage(image, imageId)).then(() => {
+            let image = {
+                title,
+                description,
+                image_url,
+                user_id: user.id
+            }
 
-            history.push(`/images/${imageId}/`)
-        })
+
+            // console.log("edit component images", images)
+            dispatch(editImage(image, imageId)).then(() => {
+
+                history.push(`/images/${imageId}/`)
+            })
         }
     }
 
@@ -84,11 +89,11 @@ const EditImage = () => {
                 </div>
             <div className='image-title'>
                 <input className='title-input' type='text' placeholder='Title' value={title}
-                        required onChange={(e) => setTitle(e.target.value)}/>
+                        required minlength={3} maxlength={50} onChange={(e) => setTitle(e.target.value)}/>
             </div>
             <div className='image-description'>
                 <input className='description-input' type='text' placeholder='Description' value={description}
-                        required onChange={(e) => setDescription(e.target.value)}/>
+                        required minlength={5} maxlength={255} onChange={(e) => setDescription(e.target.value)}/>
             </div>
             <div className='image-create-submit'>
                 <button className='create-button' type="submit">Edit Image</button>
