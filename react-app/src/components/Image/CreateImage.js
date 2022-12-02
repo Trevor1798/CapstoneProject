@@ -40,8 +40,8 @@ const CreateImage = () => {
             setErrors(errors)
             return
         }
-        if(title.length < 3 || title.length > 50){
-            errors.push('Title must be between 3 and 50 characters.')
+        if(title.length < 3 || title.length > 30){
+            errors.push('Title must be between 3 and 30 characters.')
             setErrors(errors)
             return
         }
@@ -79,7 +79,7 @@ const CreateImage = () => {
                     </div>
                     <div className='image-title'>
                         <input className='title-input' type='text' placeholder='Title'
-                            required minlength={3} maxlength={50} onChange={(e) => setTitle(e.target.value)}/>
+                            required minlength={3} maxlength={30} onChange={(e) => setTitle(e.target.value)}/>
 
                     </div>
                     <div className='image-description'>

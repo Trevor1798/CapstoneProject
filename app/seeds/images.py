@@ -83,7 +83,54 @@ def seed_images():
     image_27 = Image(
         title = 'Long Exposure Road', user_id=3, description='Being creative can be hard, naming things is also difficult as far as seed data is concerned', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669937589/Photo-genius/night-city-road-clouds-overcast-4k_1538067239_um7dps.jpg'
     )
-
+    image_28 = Image(
+        title = 'Norway Mountain Range', user_id=4, description='very snowy mountains in norway', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1670016290/Photo-genius/norway-4k_1547938097_bgjhiq.jpg'
+    )
+    image_29 = Image(
+        title = 'Fence photo', user_id=5, description='beautiful image of a highway through a fence', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1670016288/Photo-genius/lattice-fence-blur-glare-4k_1540575607_kukd9a.jpg'
+    )
+    image_30 = Image(
+        title = 'Stars galore', user_id=6, description='Wow look at all those stars', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1670016287/Photo-genius/night-sky-stars-trees-4k_1540575585_vbywkt.jpg'
+    )
+    image_31 = Image(
+        title = 'Porsche 935', user_id=7, description='Being creative can be hard, naming things is also difficult as far as seed data is concerned', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1670016287/Photo-genius/porsche-935-4k_1660678547-2048x1365_g674gp.jpg'
+    )
+    image_32 = Image(
+        title = 'USA Coast', user_id=8, description='USA coast with the ocean in view', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1670016286/Photo-genius/usa-coast-houses-ocean-sky_1596916628-2048x1152_uqsw8h.jpg'
+    )
+    image_33 = Image(
+        title = 'Italy', user_id=1, description='Italy river boats and sunrise', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1670016286/Photo-genius/italy-riverboat-sunrises-and-sunsets-grand-canal-4k_1608983164-2048x1365_yt575y.jpg'
+    )
+    image_34 = Image(
+        title = 'Big Bear Lake', user_id=2, description='Big bear lake', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1670016285/Photo-genius/big-bear-lake-4k_1560535896_xx0c8e.jpg'
+    )
+    image_35 = Image(
+        title = 'Great Wall Of China', user_id=3, description='Being creative can be hard, naming things is also difficult as far as seed data is concerned', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1670016285/Photo-genius/great-wall-of-china-4k_1596916657-2048x1365_ko3isl.webp'
+    )
+    image_36 = Image(
+        title = 'Honda 2K', user_id=4, description='My type of car', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1670016285/Photo-genius/honda-s2k-4k_1669946700-2048x1152_isj2t0.jpg'
+    )
+    image_37 = Image(
+        title = 'Santa Claus', user_id=5, description='Bros a rockstar', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1670016285/Photo-genius/cool-santa-claus-4k_1630066939-2048x1363_kzfulp.jpg'
+    )
+    image_38 = Image(
+        title = 'Eagle Nebula', user_id=6, description='Space is awesome', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1670016285/Photo-genius/eagle-nebula-4k_1629254744-2048x1152_ur21yx.jpg'
+    )
+    image_39 = Image(
+        title = 'Dubai', user_id=7, description='Being creative can be hard, naming things is also difficult as far as seed data is concerned', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1670016284/Photo-genius/dubai-city-silhouette-4k_1629228077-2048x1365_b6ldfa.jpg'
+    )
+    image_40 = Image(
+        title = 'Snowy Road', user_id=8, description='Snowy road in USA', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1670016295/Photo-genius/traffic-light-snow-pillar_1574939512_ekyzen.jpg'
+    )
+    image_41 = Image(
+        title = 'Astronomy', user_id=1, description='Took this photo with my iPhone', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1670016294/Photo-genius/astronomy-space_1574942992_smbj1j.jpg'
+    )
+    image_42 = Image(
+        title = 'Lightning City', user_id=2, description='Night City lightning strikes', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1670016292/Photo-genius/lightning-storm-at-night-bangkok_1569187773_bkjuod.jpg'
+    )
+    image_43 = Image(
+        title = 'Rio-De-Janeiro', user_id=3, description='Being creative can be hard, naming things is also difficult as far as seed data is concerned', image_url='https://res.cloudinary.com/dgmw9nv61/image/upload/v1670016291/Photo-genius/rio-de-janeiro-sunrise-4k_1546277756_bbed6g.jpg'
+    )
 
     db.session.add(image_1)
     db.session.add(image_2)
@@ -112,6 +159,22 @@ def seed_images():
     db.session.add(image_25)
     db.session.add(image_26)
     db.session.add(image_27)
+    db.session.add(image_28)
+    db.session.add(image_29)
+    db.session.add(image_30)
+    db.session.add(image_31)
+    db.session.add(image_32)
+    db.session.add(image_33)
+    db.session.add(image_34)
+    db.session.add(image_35)
+    db.session.add(image_36)
+    db.session.add(image_37)
+    db.session.add(image_38)
+    db.session.add(image_39)
+    db.session.add(image_40)
+    db.session.add(image_41)
+    db.session.add(image_42)
+    db.session.add(image_43)
     db.session.commit()
 
 
