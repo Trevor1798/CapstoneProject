@@ -18,13 +18,13 @@ const SignUpForm = () => {
 
   const onSignUp = async (e) => {
     e.preventDefault();
+    let errors = []
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password, first_name, last_name)).then(() => history.push('/explore'));
+      const data = await dispatch(signUp(username, email, password, first_name, last_name))
       if (data) {
         setErrors(data)
 
       }
-    let errors = []
     if (username.length < 4 || username.length > 50) {
       errors.push('User name must be between 4 and 50 characters')
         setErrors(errors)
@@ -86,7 +86,7 @@ const SignUpForm = () => {
   };
 
   if (user) {
-    return <Redirect to='/' />;
+    return <Redirect to='/explore' />;
   }
 
   return (
