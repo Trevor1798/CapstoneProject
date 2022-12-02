@@ -67,7 +67,7 @@ const EditImage = () => {
 
     return (
         <div className='create-image-wrapper'>
-            <img className='background-image' src='https://www.pixel4k.com/wp-content/uploads/2018/09/florida-cityscape-4k_1538070288.jpg'></img>
+            <img className='background-image' src='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669943732/Photo-genius/florida-cityscape-4k_1538070288_barjgs.jpg'></img>
             <div className="image-container">
 
             <form className="create-image-form" onSubmit={handleSubmit}>

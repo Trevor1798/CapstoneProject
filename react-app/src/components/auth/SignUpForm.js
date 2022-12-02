@@ -91,7 +91,7 @@ const SignUpForm = () => {
 
   return (
     <div className='signup-wrapper'>
-    <img className='background-image' src='https://wallpaperaccess.com/full/900704.jpg'></img>
+    <img className='background-image' src='https://res.cloudinary.com/dgmw9nv61/image/upload/v1669943631/Photo-genius/900704_wyw8tq.jpg'></img>
     <div className='signup-container'>
 
     <form className='signup-form' onSubmit={onSignUp}>
