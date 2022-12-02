@@ -9,16 +9,33 @@ const LoginForm = () => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [repeatPassword, setRepeatPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
   const onLogin = async (e) => {
     e.preventDefault();
-    const data = await dispatch(login(email, password)).then(() => history.push('/explore'));
+    let errors = []
+
+    const data = await dispatch(login(email, password))
+
     if (data) {
       setErrors(["Please provide valid credentials"]);
     }
-  };
+  //   if (email.length < 4 || email.length > 100) {
+  //     errors.push("Email must be between 4 and 100 characters")
+  //     setErrors(errors)
+  //     return
+  // };
+  // if (password.length < 6 || password.length > 50) {
+  //   errors.push('Password must be between 6 and 50 characters')
+  //   setErrors(errors)
+  //   return
+
+  // }
+
+//   if (password !== repeatPassword) setErrors(['Passwords do not match'])
+}
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
@@ -27,13 +44,14 @@ const LoginForm = () => {
   const updatePassword = (e) => {
     setPassword(e.target.value);
   };
+
   const demoUserClick = (e) => {
     e.preventDefault()
     dispatch(login("demo@aa.io", "password")).then(() => history.push('/explore'))
   }
 
   if (user) {
-    return <Redirect to='/' />;
+    return <Redirect to='/explore' />;
   }
 
   return (
