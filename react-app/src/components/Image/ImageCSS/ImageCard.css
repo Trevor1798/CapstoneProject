@@ -2,11 +2,6 @@
 position:relative;
 width: auto;
 top: 75px
-/* height: 100vh; */
-
-/* margin-left: 20px;
-margin-right: 20px; */
-
 
 }
 .image-card {
@@ -26,10 +21,6 @@ margin-right: 20px; */
     /* flex-direction: row; */
 
 }
-
-
-
-
 .images{
     position: absolute;
     color: white;
@@ -44,10 +35,6 @@ margin-right: 20px; */
     /* opacity: .7; */
     animation-name: slide;
     animation-duration: 1s
-    /* border: 2px solid black; */
-
-    /* visibility: hidden */
-    /* flex-direction: column; */
 
 }
 .image-card:hover + .images{
@@ -67,7 +54,7 @@ position: absolute;
     /* border: 2px solid black; */
     display:flex;
     justify-content: flex-end;
-    /* border: 2px solid black; */
+    /* border: 2px solid rgb(240, 8, 8); */
     /* display: flex; */
     /* width: 100px;
     height: 30px; */
