@@ -2,10 +2,10 @@ from app.models import db, environment, SCHEMA, Tag
 
 def seed_tags():
     tag_one = Tag(
-        userId=3, image_id=1, name='space'
+        userId=3, imageId=1, name='space'
     )
     tag_two = Tag(
-        userId = 1, image_id=2, name='sunsets'
+        userId = 1, imageId=2, name='sunsets'
     )
 
     db.session.add(tag_one)

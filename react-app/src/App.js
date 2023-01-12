@@ -13,6 +13,7 @@ import ExplorePage from './components/Explore/ExplorePage';
 import CreateImage from './components/Image/CreateImage';
 import EditImage from './components/Image/EditImage';
 import ImageDetails from './components/Image/ImageDetails';
+import UserFaves from './components/Likes/UserFaves';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -23,7 +24,7 @@ function App() {
       await dispatch(authenticate());
       setLoaded(true);
     })();
-    
+
   }, [dispatch]);
 
   if (!loaded) {
@@ -63,6 +64,10 @@ function App() {
         <Route path='/images/:imageId' exact={true}>
           <NavBar />
           <ImageDetails/>
+        </Route>
+        <Route path='/you/:username/favorites' exact={true}>
+          <NavBar />
+          <UserFaves/>
         </Route>
         <ProtectedRoute path='/images/:imageId/edit' exact={true}>
           <NavBar />

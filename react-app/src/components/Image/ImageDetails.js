@@ -29,8 +29,7 @@ const ImageDetails = () => {
     const image_ids = images[imageId]
     const imageOwner = users[image_ids?.user_id]
 
-    console.log('these are my users', users)
-    console.log('these are my images',imageOwner)
+    
     // console.log('imageowner', filterComment)
     // console.log('users', user?.first_name)
     // console.log('images ids', image_ids)

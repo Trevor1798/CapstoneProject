@@ -4,6 +4,6 @@ from wtforms.validators import DataRequired, Length, NumberRange
 
 
 class FavoriteForm(FlaskForm):
-    userId = IntegerField('userId', validators=[DataRequired(), NumberRange(min=1, max=1000)])
-    imageId = IntegerField('imageId', validators=[DataRequired(), NumberRange(min=1, max=1000)])
+    userId = IntegerField('userId', validators=[DataRequired()])
+    imageId = IntegerField('imageId', validators=[DataRequired()])
     submit = SubmitField('Submit')

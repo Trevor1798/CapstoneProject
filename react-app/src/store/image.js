@@ -42,16 +42,16 @@ export const getImage = () => async dispatch =>  {
 }
 
 export const createImage = (payload) => async dispatch => {
-    console.log('this is the payload hitting the thunk', payload)
+
         const response = await fetch('/api/images/new_image', {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(payload)
         })
         if (response.ok){
-            console.log('this is the response from hitting the backend', response)
+
             const image = await response.json()
-            console.log('this is the new image', image)
+            
             dispatch(createImageAction(image))
             return image
         }

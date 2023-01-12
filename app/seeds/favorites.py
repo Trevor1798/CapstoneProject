@@ -3,10 +3,10 @@ from app.models import db, environment, SCHEMA, Favorite
 
 def seed_favorites():
     favorite_one = Favorite(
-        user_id=2, image_id=2
+        userId=2, imageId=2
     )
     favorite_two = Favorite(
-        user_id=3, image_id=3
+        userId=3, imageId=3
     )
 
     db.session.add(favorite_one)

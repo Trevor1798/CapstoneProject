@@ -1,19 +1,16 @@
 """empty message
 
-Revision ID: 20cd682aceb4
-Revises:
-Create Date: 2022-12-02 17:15:41.205395
+Revision ID: 66d1da89e9ee
+Revises: 
+Create Date: 2023-01-11 19:19:38.802676
 
 """
 from alembic import op
 import sqlalchemy as sa
-import os
-environment = os.getenv("FLASK_ENV")
-SCHEMA = os.environ.get("SCHEMA")
 
 
 # revision identifiers, used by Alembic.
-revision = '20cd682aceb4'
+revision = '66d1da89e9ee'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -52,17 +49,19 @@ def upgrade():
     )
     op.create_table('favorites',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('user_id', sa.Integer(), nullable=True),
-    sa.Column('image_id', sa.Integer(), nullable=True),
-    sa.ForeignKeyConstraint(['image_id'], ['images.id'], ),
-    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
+    sa.Column('userId', sa.Integer(), nullable=True),
+    sa.Column('imageId', sa.Integer(), nullable=True),
+    sa.ForeignKeyConstraint(['imageId'], ['images.id'], ),
+    sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('tag',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('image_id', sa.Integer(), nullable=True),
-    sa.Column('tag_name', sa.String(length=75), nullable=False),
-    sa.ForeignKeyConstraint(['image_id'], ['images.id'], ),
+    sa.Column('userId', sa.Integer(), nullable=True),
+    sa.Column('imageId', sa.Integer(), nullable=True),
+    sa.Column('name', sa.String(length=75), nullable=False),
+    sa.ForeignKeyConstraint(['imageId'], ['images.id'], ),
+    sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###
