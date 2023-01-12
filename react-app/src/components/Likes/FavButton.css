@@ -1,0 +1,21 @@
+.create-like-button {
+    cursor: pointer;
+  }
+
+  .create-like-button:hover {
+    cursor: pointer;
+    color: red;
+  }
+
+  .delete-like-button {
+    cursor: pointer;
+    color: red;
+  }
+
+  .image-card-unfilled {
+   
+  }
+
+  .image-card-filled {
+    color: white;
+  }

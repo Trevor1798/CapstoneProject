@@ -7,8 +7,8 @@ class Favorite(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')))
-    image_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('images.id')))
+    userId = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')))
+    imageId = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('images.id')))
 
     # Relationships
     image = db.relationship('Image', back_populates='favorites')
@@ -16,6 +16,6 @@ class Favorite(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'user_id': self.user_id,
-            'image_id': self.image_id
+            'user_id': self.userId,
+            'image_id': self.imageId
         }

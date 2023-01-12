@@ -67,13 +67,33 @@ position: absolute;
 
     bottom: 25px;
 }
+.filter-comments {
+position: relative;
+bottom: 0px;
 
+}
+.bubble {
+    position: relative;
+    top: 1px;
+}
 @keyframes slide {
     0%{opacity: 0;}
     100%{opacity: 1;}
 }
 
+.image-card-like {
 
+    /* position: relative; */
+    /* right: 0px; */
+    /* top: 100px; */
+}
+.moving-like {
+    position: absolute;
+}
+.image-card-length {
+    /* position: absolute;
+    right: 40px; */
+}
 .image-title {
 
 

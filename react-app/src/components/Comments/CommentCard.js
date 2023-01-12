@@ -24,9 +24,7 @@ const CommentCard = ({comment}) => {
     // const imageOwner = users[image_ids?.user_id]
 
 
-    console.log('dfefefeffefe', commentOwner?.id, user?.id)
-    console.log('COMMENT IDS--------')
-
+ 
 
     const [description, setDescription ] = useState(comment?.description)
     const [canEdit, setCanEdit] = useState(false)

@@ -7,8 +7,9 @@ favorite_routes = Blueprint('favorites', __name__)
 @favorite_routes.route('/')
 def get_faves():
     favorites = Favorite.query.all()
-
-    return{'favorites' : [favorites.to_dict() for favorites in favorites]}
+    get_faves = []
+    get_faves.extend([i.to_dict() for i in favorites])
+    return{'favorites' : get_faves}
 
 
 @favorite_routes.route('/create_favorite', methods=['POST'])
@@ -19,19 +20,19 @@ def create_fav():
 
     if form.validate_on_submit():
 
-        favorite= Favorite(
+        favorite = Favorite(
             userId = form.data['userId'],
-            imageId=form.data['imageId']
+            imageId =form.data['imageId']
         )
 
         db.session.add(favorite)
         db.session.commit()
         return jsonify(favorite.to_dict())
 
-@favorite_routes.route('/<int:fav_id>', methods=['DELETE'])
-@login_required
-def delete_fav(favorite_id):
-    fav_data = Favorite.query.get(favorite_id)
-    db.session.delete(favorite_id)
+@favorite_routes.route('/<int:id>', methods=['DELETE'])
+# @login_required
+def delete_fav(id):
+    fav_data = Favorite.query.get(id)
+    db.session.delete(fav_data)
     db.session.commit()
-    return jsonify(fav_data.to_dict())
+    return "Fav Deleted"
