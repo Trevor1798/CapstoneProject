@@ -14,6 +14,9 @@ import CreateImage from './components/Image/CreateImage';
 import EditImage from './components/Image/EditImage';
 import ImageDetails from './components/Image/ImageDetails';
 import UserFaves from './components/Likes/UserFaves';
+import Trending from './components/Tags/Trending';
+import Tags from './components/Tags/Tags';
+import TagSearch from './components/Tags/TagSearch';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -72,6 +75,18 @@ function App() {
         <ProtectedRoute path='/images/:imageId/edit' exact={true}>
           <NavBar />
           <EditImage/>
+        </ProtectedRoute>
+        <Route path ='/trending' exact={true}>
+          <NavBar/>
+          <Trending/>
+        </Route>
+        <Route path='/tags/:id' exact={true}>
+          <NavBar/>
+          <TagSearch/>
+        </Route>
+        <ProtectedRoute path='/tags' exact={true}>
+          <NavBar/>
+          <Tags/>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

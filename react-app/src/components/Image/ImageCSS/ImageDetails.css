@@ -132,3 +132,88 @@ background: linear-gradient(90deg, rgba(98,0,255,1) 0%, rgba(255,0,0,1) 100%);
     margin-bottom: 24px;
     font-weight: 600;
 }
+
+.image-detail-bottom-right {
+    margin-top: 26px;
+    width: 50%;
+  }
+
+  .image-detail-stats-container {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #cfd6d9;
+    width: 100%;
+  }
+
+  .image-detail-stats {
+    display: flex;
+    width: 223px;
+    justify-content: space-between;
+  }
+
+  .image-detail-stats-top {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  .image-detail-stats-bottom {
+    color: #898989;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .image-detail-tags-container {
+    margin-top: 23px;
+  }
+
+  .image-detail-tags-inner-container {
+    margin-right: 30px;
+    width: 225px;
+  }
+
+  .image-detail-tag-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .image-detail-tag-test-container {
+    display: flex;
+    justify-content: space-between;
+    width: 58px;
+  }
+
+  .image-detail-tag {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+
+  .image-detail-tag-edit {
+    cursor: pointer;
+    margin-top: 3px;
+  }
+
+  .image-detail-tag-edit:hover {
+    color: #006dac;
+  }
+
+  .image-detail-tag-add {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 5px;
+    color: #006dac;
+    cursor: pointer;
+    display: block;
+    height: 17px;
+  }
+
+  .image-detail-tag-add:hover {
+    text-decoration: underline;
+  }
+
+  .image-detail-tag-card-container {
+    width: 225px;
+    margin-top: 5px;
+    margin-bottom: 72px;
+  }

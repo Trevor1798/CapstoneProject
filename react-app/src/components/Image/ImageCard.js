@@ -7,7 +7,7 @@ import { getUser } from "../../store/user"
 import { getAllFaves, deleteFav, createFav } from "../../store/favorites"
 import './ImageCSS/ImageCard.css'
 
-const ImageCard = ({image, comment,  imageId}) => {
+const ImageCard = ({image, comment, imageId}) => {
     const dispatch = useDispatch()
     const history = useHistory()
     const user = useSelector(state => state.session.user)
@@ -17,7 +17,7 @@ const ImageCard = ({image, comment,  imageId}) => {
     const favArr = Object.values(faves)
     const comments = Object.values(comment)
     // console.log('these are me users',favArr)
-    const filterComment = comment.filter(com => com?.image_id === image?.id)
+    const filterComment = comments.filter(com => com?.image_id === image?.id)
 
     useEffect(() =>{
         dispatch(getImage())

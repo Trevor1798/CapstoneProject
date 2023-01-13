@@ -35,5 +35,4 @@ def delete_tag(tag_id):
     tagData = Tag.query.get(tag_id)
     db.session.delete(tagData)
     db.session.commit()
-    return jsonify(tagData.to_dict())
-    
+    return "Tag Deleted"

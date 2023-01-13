@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router"
 import { deleteImage, getImage } from "../../store/image"
@@ -9,6 +9,11 @@ import './ImageCSS/ImageDetails.css'
 import CommentCard from "../Comments/CommentCard"
 import CreateComment from "../Comments/CreateComment"
 import { getUser } from "../../store/user"
+import FavButton from "../Likes/FavButton"
+import CreateTag from "../Tags/CreateTag.js"
+import TagCard from "../Tags/TagCard.js"
+import { getAllFaves } from "../../store/favorites"
+import { getAllTags } from "../../store/tags"
 // testing ssh agent
 
 
@@ -20,6 +25,12 @@ const ImageDetails = () => {
     const images = useSelector(state => state.images)
     const commentsObj = useSelector(state => state.comments)
     const users = useSelector(state => state.users)
+    const faves = useSelector(state => state.favorites)
+    const tags = useSelector(state => state.tags)
+
+
+    const [addTag, setAddTag] = useState(false)
+    const [editTag, setEditTag] = useState(false)
 
 
     const comment = Object.values(commentsObj)
@@ -29,7 +40,11 @@ const ImageDetails = () => {
     const image_ids = images[imageId]
     const imageOwner = users[image_ids?.user_id]
 
-    
+    const tagsArr = Object.values(tags)
+    const filteredTags = tagsArr.filter(tag => tag?.image_id === Number(imageId))
+    console.log('THESE ARE TAGS',filteredTags)
+
+    const imageFaves = Object.values(faves).filter(fav => fav?.image_id === Number(imageId))
     // console.log('imageowner', filterComment)
     // console.log('users', user?.first_name)
     // console.log('images ids', image_ids)
@@ -48,6 +63,8 @@ const ImageDetails = () => {
         dispatch(getImage())
         dispatch(getComment())
         dispatch(getUser())
+        dispatch(getAllFaves())
+        dispatch(getAllTags())
     }, [dispatch])
 
     return (
@@ -97,17 +114,90 @@ const ImageDetails = () => {
                     ))}
 
                 </div>
-            <div className="create-comment-detail"><CreateComment/></div>
+            <div className="create-comment-detail"><CreateComment imageId={imageId}/></div>
+             </div>
+
+
+            <div className='image-detail-bottom-right'>
+
+            <div className='image-detail-stats-container'>
+              <div className='image-detail-stats'>
+
+                  <div className='image-detail-stats-likes'>
+                    <div className='image-detail-stats-top'>{`${imageFaves?.length}`}</div>
+                    <div className='image-detail-stats-bottom'>likes</div>
+                  </div>
+
+                  <div className='image-detail-stats-comments'>
+                    <div className='image-detail-stats-top'>{filterComment?.length}</div>
+                    <div className='image-detail-stats-bottom'>comments</div>
+                  </div>
+
+                  <FavButton imageId={imageId} />
+
+              </div>
+            </div>
+
+
+            <div className='image-detail-tags-container'>
+              <div className='image-detail-tags-inner-container'>
+
+                <div className='image-detail-tag-header'>
+                  <div className='image-detail-tag-test-container'>
+                    <div className='image-detail-tag'>Tags</div>
+                    {
+                      !editTag && user?.id === imageOwner?.id &&
+                      <i class="image-detail-tag-edit fa-solid fa-pencil" onClick={() => setEditTag(true)}></i>
+                    }
+                    {
+                      editTag &&
+                      <i class="image-detail-tag-edit fa-solid fa-pencil" onClick={() => setEditTag(false)}></i>
+                    }
+
+                  </div>
+                    {!addTag &&
+                      user?.id === imageOwner?.id && (
+                        <div className='image-detail-tag-add' onClick={() => setAddTag(true)}>Add tags</div>
+                      )
+                    }
+                    {addTag &&
+                      user?.id === imageOwner?.id && (
+                        <div className='image-detail-tag-add' onClick={() => setAddTag(false)}>Add tags</div>
+                      )
+                    }
+                </div>
+
+                {
+                  addTag && (
+                  <div className='image-detail-create-tag'>
+                    <CreateTag imageId={imageId} filteredTags={filteredTags}/>
+                  </div>
+                  )
+                }
+
+                <div className='image-detail-tag-card-container'>
+                  {filteredTags?.map((tag, i) =>{
+                    return (
+                        <div key={i}>
+                        <TagCard tag={tag} editTag={editTag}/>
+                        </div>
+                    )
+                  })}
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+
         </div>
-                    </div>
-        </div>
+
+      </div>
+
+
     </div>
-
-
-
-    )
-
-
+  )
 }
 
-export default ImageDetails
+export default ImageDetails;

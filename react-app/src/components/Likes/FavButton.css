@@ -1,5 +1,6 @@
 .create-like-button {
     cursor: pointer;
+    size: 20px;
   }
 
   .create-like-button:hover {
@@ -13,9 +14,9 @@
   }
 
   .image-card-unfilled {
-   
+   color: white;
   }
 
   .image-card-filled {
-    color: white;
+    color: white
   }

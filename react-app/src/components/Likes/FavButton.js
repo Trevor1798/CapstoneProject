@@ -7,7 +7,7 @@ import './FavButton.css'
 
 
 const FavButton = ({imageId}) => {
-
+    console.log('this is imageId inside favbutton component', imageId)
     const dispatch = useDispatch()
 
     const user = useSelector((state) => state.session.user)
@@ -15,9 +15,10 @@ const FavButton = ({imageId}) => {
 
 
     const favArr = Object.values(faves)
+    console.log('FAVARR', favArr)
 
     useEffect(() => {
-        dispatch(getAllImagesThunk())
+        dispatch(getImage())
         dispatch(getAllFaves())
 
     },[dispatch])
@@ -38,28 +39,28 @@ const FavButton = ({imageId}) => {
         e.preventDefault()
 
         for (let i = 0; i < favArr.length; i++){
-            if (favArr[i]?.userId === user?.id && favArr[i]?.imageId === Number(imageId)) {
+            if (favArr[i]?.user_id === user?.id && favArr[i]?.image_id === Number(imageId)) {
                 return dispatch(deleteFav(favArr[i]?.id)).then(dispatch(getAllFaves()))
             }
         }
     }
 
-    const userFaved = favArr.filter(fav => fav?.userId === user?.id && fav?.imageId === Number(imageId))
-
+    const userFaved = favArr.filter(fav => fav?.user_id === user?.id && fav?.image_id === Number(imageId))
+    console.log('testing favbutton component', userFaved)
     let conditional
 
     if (userFaved.length > 0 ) {
         conditional = (
 
             <div onClick={handleDeleteFav}>
-                <i className="fa-regular fa-star"></i>
+                <i className="fa-solid fa-star delete-like-button"></i>
             </div>
 
         )
     } else {
         conditional = (
             <div onClick={handleCreateFav}>
-                <i className="fa-regular fa-star"></i>
+                <i className="fa-regular fa-star create-like-button"></i>
             </div>
         )
     }
