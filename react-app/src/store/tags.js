@@ -49,7 +49,7 @@ export const createTags = (tag) => async dispatch => {
 }
 
 export const deleteTag = (tagId) => async dispatch => {
-    const res = await fetch(`api/tags/${tagId}`, {
+    const res = await fetch(`/api/tags/${tagId}`, {
         method: 'DELETE'
     })
     if (res.ok) {
