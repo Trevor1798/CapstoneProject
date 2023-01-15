@@ -20,6 +20,14 @@ const ExplorePage = () => {
     },[dispatch])
 
     return (
+        <>
+        <div className="explorepage-tabs-container">
+        <div className="explorepage-tabs">
+          <div className="explorepage-tab-explore" onClick={() => history.push(`/explore`)}>Explore</div>
+          {/* <div className="explorepage-tab-tags" onClick={() => history.push(`/trending`)}>Trending</div> */}
+          <div className="explorepage-tab-tags" onClick={() => history.push(`/tags`)}>Tags</div>
+        </div>
+      </div>
         <div className="explore-page-wrapper">
         <div className='explore-page'>
             <div className='explore-images'>
@@ -30,12 +38,13 @@ const ExplorePage = () => {
                         <ImageCard image={image} comment={comment}/>
                         </div>
                 )
-                })}
+            })}
             </div>
         </div>
 
 
         </div>
+            </>
     )
 }
 
