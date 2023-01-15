@@ -80,7 +80,7 @@ function App() {
           <NavBar/>
           <Trending/>
         </Route>
-        <Route path='/tags/:id' exact={true}>
+        <Route path='/tags/:tagname' exact={true}>
           <NavBar/>
           <TagSearch/>
         </Route>

@@ -28,3 +28,59 @@ gap: 0 5px;
 .explore-images > * {
     flex-grow: 1
 }
+
+
+.explorepage-tabs-container {
+    height: 50px;
+    background-color: #fff;
+    border-bottom: 1px solid hsla(0,0%,54%,.3);
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 60px;
+    z-index: 1;
+  }
+
+  .explorepage-tabs {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .explorepage-tab-explore {
+    align-items: center;
+    box-sizing: border-box;
+    color: #000;
+    display: flex;
+    font-size: 12pt;
+    font-weight: 400;
+    height: 50px;
+    padding: 12px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-bottom: 3px solid #0091dc;
+  }
+
+  .explorepage-tab-tags {
+    align-items: center;
+    box-sizing: border-box;
+    color: #000;
+    display: flex;
+    font-size: 12pt;
+    font-weight: 400;
+    height: 50px;
+    opacity: .75;
+    padding: 12px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .explorepage-tab-tags:hover {
+    border-bottom: 3px solid #0091dc;
+    opacity: 1;
+  }

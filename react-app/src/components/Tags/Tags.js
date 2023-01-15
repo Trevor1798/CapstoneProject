@@ -38,7 +38,7 @@ const Tags = () => {
         <div className="tagspage-tabs-container">
             <div className="tagspage-tabs">
                 <div className="tagspage-tab-explore" onClick={() => history.push('/explore')}>Explore</div>
-                 <div className="tagspage-tab-explore" onClick={() => history.push('/trending')}>Trending</div>
+                 {/* <div className="tagspage-tab-explore" onClick={() => history.push('/trending')}>Trending</div> */}
                  <div className="tagspage-tab-tags" onClick={() => history.push('/tags')}>Tags</div>
             </div>
         </div>

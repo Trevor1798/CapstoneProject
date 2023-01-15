@@ -15,30 +15,30 @@ const Trending = () => {
 
     const tagsArr = Object.values(tags)
 
-    let totalTagNames = []
+     // Putting all tag names into one array, including duplicates
+  let totalTagNames = [];
+  for (let i = 0; i < tagsArr.length; i++) {
+    totalTagNames.push(tagsArr[i].name)
+  }
 
-    for (let i = 0; i < tagsArr.length; i++) {
-        totalTagNames.push(tagsArr[i].tag_name)
-    }
-    //Counting number of times each tag name appears in the totalTagNames array
-    const counts = {}
-    totalTagNames.forEach(function (x) {counts[x] = (counts[x] || 0) + 1; })
+  // Tallying the number of times each tag name appears in the totalTagNames array
+  const counts = {};
+  totalTagNames.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
 
-    //Get an array of tagName keys
 
-    let tagNameKeys = Object.keys(counts)
+  // Get an array of the keys:
+  let tagNameKeys = Object.keys(counts);
 
-    //Then sort by using tag name key by highest to lowest count
-    tagNameKeys.sort(function(a, b) {return counts[b] - counts[a]})
+  // Then sort by using the tag name keys by highest to lowest count
+  tagNameKeys.sort(function(a, b) { return counts[b] - counts[a] });
 
-    //Select only the top 25 tag names
+  // Select only the top 25 tag names
+  let topTagNames = [];
+  for (let i = 0; i < 25; i++) {
+    topTagNames.push(tagNameKeys[i])
+  }
 
-    let topTagNames = []
-    for (let i = 0; i < 25; i++) {
-        topTagNames.push(tagNameKeys[i])
-
-    }
-
+console.log('trending page', topTagNames)
     useEffect(() => {
         dispatch(getAllTags())
         dispatch(getImage())
@@ -50,7 +50,7 @@ const Trending = () => {
         <div className="tagspage-tabs-container">
           <div className="tagspage-tabs">
             <div className="tagspage-tab-explore" onClick={() => history.push(`/explore`)}>Explore</div>
-            <div className="tagspage-tab-tags" onClick={() => history.push(`/trending`)}>Trending</div>
+            {/* <div className="tagspage-tab-tags" onClick={() => history.push(`/trending`)}>Trending</div> */}
             <div className="tagspage-tab-explore" onClick={() => history.push(`/tags`)}>Tags</div>
           </div>
         </div>
@@ -61,8 +61,6 @@ const Trending = () => {
 
               <div className='tagspage-trending'>{`Trending Tags — Now`}</div>
 
-              <div className="tagspage-alltags" onClick={() => history.push(`/tags`)}>View all tags</div>
-
             </div>
           </div>
         </div>
@@ -71,7 +69,7 @@ const Trending = () => {
           <div className="tagspage-container">
             <div className="tagspage-inner-container">
               <div className="tagspage-images-container">
-                {topTagNames.map((tagname) => {
+                {topTagNames?.map((tagname) => {
                   return (
                     <div key={tagname}>
                       <TagBigCard tagname={tagname} images={images} tags={tags}/>

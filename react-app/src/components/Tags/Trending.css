@@ -4,8 +4,8 @@
     border-bottom: 1px solid hsla(0,0%,54%,.3);
     width: 100%;
     box-sizing: border-box;
-    position: sticky;
-    top: 50px;
+    position: absolute;
+    top: 60px;
     z-index: 1;
   }
 
@@ -70,6 +70,7 @@
     padding-top: 10px;
     background-color: #f3f5f6;
     width: 100%;
+    /* margin-top: 30px */
   }
 
   .tagspage-inner-container {
@@ -77,6 +78,7 @@
     justify-content: center;
     flex-direction: column;
     max-width: 80%;
+    /* margin-top: 30px; */
   }
 
   .tagspage-images-container {
@@ -89,6 +91,7 @@
     /* max-width: 1440px; */
     box-sizing: content-box;
     width: 100%;
+    margin-top: 50px;
   }
 
   .tagspage-images-container > * {
@@ -108,6 +111,8 @@
   .tagspage-trending {
     font-size: 16px;
     font-weight: 600;
+    margin-top: 30px
+    ;
   }
 
   .tagspage-alltags {
@@ -117,4 +122,23 @@
 
   .tagspage-alltags:hover {
     text-decoration: underline;
+  }
+
+  .tagspage-test-container {
+    margin-top: 30px;
+
+  }
+
+  .tagspage-testing {
+/* margin-top: 30px; */
+  }
+
+  .tagspage-inner-test {
+    /* margin-top: 10px; */
+    /* margin-right: 20px; */
+    position: absolute;
+    /* right: .5px; */
+    /* left: -1px; */
+    /* right: 5px; */
+    /* top: 20px; */
   }
