@@ -1,0 +1,218 @@
+.youPage-top-container {
+    position: relative;
+    width: 100%;
+  }
+
+  .youPage-inner-container {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    /* width: 80%; */
+    /* max-width: 80%; */
+  }
+
+  .youPage-image-container::after {
+    background: linear-gradient(180deg, rgb(0,0,0,0), 70%, rgb(0,0,0));
+    content: "";
+    left: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    height: 250px;
+  }
+
+  .youPage-top {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    background: linear-gradient(180deg, rgb(0,0,0,0), 50%, rgb(0,0,0));
+  }
+
+  .youPage-inner-bottom {
+    display: flex;
+    margin-top: 130px;
+    z-index: 1;
+  }
+
+  .youPage-profile {
+    /* display: flex; */
+    /* justify-content: center; */
+    width: 100px;
+    height: 100px;
+    /* position: absolute; */
+    top: 126px;
+  }
+
+  .youPage-info {
+    color: white;
+    margin-left: 12px;
+    margin-top: 24px;
+  }
+
+  .youPage-name {
+    display: flex;
+    align-items: center;
+    font-size: 36px;
+    z-index: 1;
+  }
+
+  .youPage-username {
+    display: flex;
+    margin-top: 12px;
+    z-index: 1;
+  }
+
+  .youPage-middle-container {
+    border-bottom: 1px solid hsla(0,0%,54%,.3);
+    margin-top: 20px;
+    height: 50px;
+  }
+
+  .youPage-middle-text {
+    display: flex;
+    align-items: center;
+    /* box-sizing: border-box; */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+    height: 100%;
+    font-size: 12pt;
+    font-weight: 400;
+  }
+
+  .youPage-outer-container {
+    height: 100%;
+    min-height: 75vh;
+    background-color: #f3f5f6;
+  }
+
+  .youPage-container {
+    background-color: #f3f5f6;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10em;
+    padding-top: 50px;
+  }
+
+  .youPage-middle-photostream {
+    padding: 12px 20px;
+    line-height: 25px;
+    cursor: pointer;
+    margin-right: 10px;
+    color: black;
+  }
+
+  .youPage-middle-likes {
+    padding: 12px 20px;
+    line-height: 25px;
+    cursor: pointer;
+    margin-right: 10px;
+    box-sizing: border-box;
+    color: hsla(0,0%,54%);
+  }
+
+  .youPage-middle-likes:hover {
+    border-bottom: 3px solid #0091dc;
+    color: black;
+  }
+
+  .youPage-middle-photostream {
+    padding: 12px 20px;
+    line-height: 25px;
+    cursor: pointer;
+    margin-right: 10px;
+    box-sizing: border-box;
+    border-bottom: 3px solid #0091dc;
+  }
+
+  .youPage-inner-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 80%;
+  }
+
+  .youPage-images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0 5px;
+    /* width: 1200px; */
+    width: 100%;
+    /* max-width: 1440px; */
+    box-sizing: content-box;
+    width: 100%;
+  }
+
+  .youPage-images-container > * {
+    /* flex: 1 1 auto; */
+    flex-grow: 1;
+    /* flex-shrink: 1; */
+    /* flex-basis: auto; */
+  }
+
+  .youPage-none-container {
+    background-color: #f3f5f6;
+    display: flex;
+    justify-content: center;
+    /* margin-bottom: 10em; */
+    padding-top: 50px;
+    width: 100%;
+  }
+
+  .youPage-text-top {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    line-height: 30px;
+    object-fit: cover;
+  }
+
+  .youPage-text-middle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+    padding: 0 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    text-align: center;
+  }
+
+  .youPage-text-inner-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .youPage-button {
+    display: flex;
+    justify-content: center;
+    height: 36px;
+    line-height: 36px;
+    min-width: 100px;
+    background-color: #128fdc;
+    padding: 0 20px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    width: 169.56px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .youPage-background {
+    margin-top: 50px;
+    object-fit: cover;
+    width: 80vw;
+  }

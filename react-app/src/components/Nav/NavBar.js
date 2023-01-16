@@ -1,4 +1,4 @@
-
+import { useState } from 'react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
@@ -12,6 +12,15 @@ const NavBar = () => {
   let dispatch = useDispatch()
   const user = useSelector(state => state.session.user)
 
+  const [body, setBody] = useState("")
+
+
+  const handleSearch = (e) => {
+    e.preventDefault()
+    history.push(`/tags/${body}`)
+    setBody("")
+  }
+
   return (
     <div className='splashpage-wrapper'>
 
@@ -23,9 +32,23 @@ const NavBar = () => {
                 <div className='photo-genius-logo2'>•</div>
                 <div className='photo-genius' onClick={() => history.push('/')}>photo-genius</div>
                 <div className='explore' onClick={() => history.push('/explore')}>Explore</div>
+                <div className='navbar-you' onClick={() => history.push(`/you/${user?.username}`)}>You</div>
                 </div>
                 </div>
                 <div className='upload-logout'>
+                <div className='navbar-search'>
+            <i class="navbar-glass fa-solid fa-magnifying-glass" onClick={handleSearch}></i>
+            <form>
+              <input
+                className='navbar-search-input'
+                type="text"
+                placeholder="Search photos or tags"
+                value={body}
+                onKeyPress={(e) => {if (e.key === "Enter") {handleSearch(e)}}}
+                onChange={(e) => setBody(e.target.value)}
+                />
+            </form>
+          </div>
                   {user && (
                     <>
                 <div className='upload' onClick={() => history.push('/images/upload')}>Upload</div>

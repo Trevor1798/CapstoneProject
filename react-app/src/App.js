@@ -17,6 +17,7 @@ import UserFaves from './components/Likes/UserFaves';
 import Trending from './components/Tags/Trending';
 import Tags from './components/Tags/Tags';
 import TagSearch from './components/Tags/TagSearch';
+import YouPage from './components/YouPage/YouPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -83,6 +84,14 @@ function App() {
         <Route path='/tags/:tagname' exact={true}>
           <NavBar/>
           <TagSearch/>
+        </Route>
+        <Route path='/you/:username/faves' exact={true}>
+          <NavBar />
+          <UserFaves/>
+        </Route>
+        <Route path='/you/:username' exact={true}>
+          <NavBar />
+          <YouPage/>
         </Route>
         <ProtectedRoute path='/tags' exact={true}>
           <NavBar/>

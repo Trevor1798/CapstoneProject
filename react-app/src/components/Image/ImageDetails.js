@@ -97,7 +97,7 @@ const ImageDetails = () => {
             </div>
 
             <div className="image-detail-user-info">
-                <div className="image-detail-username">{imageOwner?.first_name}{' '}{imageOwner?.last_name}</div>
+                <div className="image-detail-username" onClick={() => history.push(`/you/${imageOwner?.username}`)}>{imageOwner?.first_name}{' '}{imageOwner?.last_name}</div>
                 <div className="image-detail-title">{image_ids?.title}</div>
                 <div className="image-detail--description">{image_ids?.description}</div>
 
