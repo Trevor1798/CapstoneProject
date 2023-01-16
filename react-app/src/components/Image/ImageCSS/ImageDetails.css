@@ -107,6 +107,11 @@ background: linear-gradient(90deg, rgba(98,0,255,1) 0%, rgba(255,0,0,1) 100%);
     display: inline-block;
 }
 
+.image-detail-username:hover{
+  text-decoration: underline;
+  color: #006dac
+}
+
 .image-detail-title {
     font-size: 16px;
     margin-bottom: 10px;

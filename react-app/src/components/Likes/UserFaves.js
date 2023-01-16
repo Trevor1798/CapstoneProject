@@ -7,6 +7,7 @@ import { getUser } from '../../store/user'
 import {useHistory, useParams} from 'react-router-dom'
 import { getComment } from '../../store/comment'
 import image from './youPageBackground.PNG'
+import './UserFaves.css'
 
 const UserFaves = () => {
     const dispatch = useDispatch()
@@ -22,21 +23,23 @@ const UserFaves = () => {
     const favArr = Object.values(faves)
 
     const currentUser = Object.values(users).filter(user => user?.username === username?.username)[0]
-    const userFaves = favArr.filter(fav => fav?.user_id === Number(currentUser?.id))
-
+    const userFaves = favArr.filter(fav => fav?.user_id === currentUser?.id)
+  console.log('this is my saved faves', userFaves)
     let favImageIdArr = []
     for (let i = 0; i < userFaves.length; i++){
-        favImageIdArr.push(userFaves[i].imageId)
+        favImageIdArr.push(userFaves[i].image_id)
     }
-    const imageArr = Object.values(images)
+    const imagearr = Object.values(images)
+    console.log('this is imagearr', imagearr)
     const userFavedImages = []
 
-    for (let i = 0; i < imageArr.length; i++){
-        if (favImageIdArr.includes(imageArr[i].id)) {
-            userFavedImages.push(imageArr[i])
+    for (let i = 0; i < imagearr.length; i++){
+        if (favImageIdArr.includes(imagearr[i].id)) {
+            userFavedImages.push(imagearr[i])
         }
     }
 
+    console.log('this is my userfAVEDimages', userFavedImages)
     useEffect(() => {
         dispatch(getImage())
         dispatch(getAllFaves())
@@ -69,9 +72,9 @@ const UserFaves = () => {
               <div className='youPage-none-container'>
 
                 <div className='youPage-text-container'>
-                  <div className='youPage-text-top'>You have no liked photos.</div>
+                  <div className='youPage-text-top'>You have no favorite photos.</div>
                   <div className='youPage-text-inner-container'>
-                    <div className='youPage-text-middle'>{`You currently have no liked photos. Explore other photos uploaded by users in the explore page.`}</div>
+                    {/* <div className='youPage-text-middle'>{`You currently have no favorite photos. Explore photos uploaded by users in the explore page.`}</div> */}
 
                   </div>
                   <div className='youPage-text-inner-container'>
@@ -91,9 +94,9 @@ const UserFaves = () => {
               <div className='youPage-none-container'>
 
                 <div className='youPage-text-container'>
-                  <div className='youPage-text-top'>{`${currentUser?.first_name} ${currentUser?.last_name} does not have any liked photos.`}</div>
+                  <div className='youPage-text-top'>{`${currentUser?.first_name} ${currentUser?.last_name} does not have any favorite photos.`}</div>
                   <div className='youPage-text-inner-container'>
-                    <div className='youPage-text-middle'>{`${currentUser?.first_name} ${currentUser?.last_name} currently has no liked photos. Explore other photos uploaded by users in the explore page.`}</div>
+                    <div className='youPage-text-middle'>{`${currentUser?.first_name} ${currentUser?.last_name} currently has no favorite photos. Explore photos uploaded by users in the explore page.`}</div>
 
                   </div>
                   <div className='youPage-text-inner-container'>
@@ -113,7 +116,7 @@ const UserFaves = () => {
           <>
             <div className='userlikes-top-container'>
               <div className='userlikes-image-container'>
-                <img className='userlikes-top' src={'https://combo.staticflickr.com/pw/images/coverphoto11_h.jpg.v3'} alt=''/>
+                <img className='userlikes-top' src={'https://stsci-opo.org/STScI-01EVVDX3VNWKFGFGXYRQXCJBEN.jpg'} alt=''/>
 
               </div>
 
@@ -133,7 +136,7 @@ const UserFaves = () => {
             <div className='userlikes-middle-container'>
               <div className='userlikes-middle-text'>
                 <div className='userlikes-middle-photostream' onClick={() => history.push(`/you/${currentUser?.username}`)}>Photostream</div>
-                <div className='userlikes-middle-likes'>Likes</div>
+                <div className='userlikes-middle-likes'>Favorites</div>
               </div>
             </div>
 
