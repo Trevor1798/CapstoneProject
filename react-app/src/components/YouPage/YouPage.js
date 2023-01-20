@@ -51,7 +51,7 @@ const YouPage = () => {
     const userFavedImages = []
 
     for (let i = 0; i < imagearr.length; i++) {
-        if (!favImageArr.includes(imagearr[i].id)) {
+        if (favImageArr.includes(imagearr[i].id)) {
             userFavedImages.push(imagearr[i])
         }
     }
