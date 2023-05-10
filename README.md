@@ -1,6 +1,6 @@
 # Photo-Genius: A Flickr Clone 📷
 
-## Hello all future participants! 👋
+## Hello all future participants!  👋
 
 # About Photo-Genius:
 
