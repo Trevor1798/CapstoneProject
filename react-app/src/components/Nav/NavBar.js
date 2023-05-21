@@ -32,7 +32,9 @@ const NavBar = () => {
                 <div className='photo-genius-logo2'>•</div>
                 <div className='photo-genius' onClick={() => history.push('/')}>photo-genius</div>
                 <div className='explore' onClick={() => history.push('/explore')}>Explore</div>
+              {user && (
                 <div className='navbar-you' onClick={() => history.push(`/you/${user?.username}`)}>You</div>
+                )}
                 </div>
                 </div>
                 <div className='upload-logout'>
